@@ -17,6 +17,10 @@
     "requires_human_review"
   ],
   "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
     "incident_id": {
       "type": "string",
       "minLength": 1

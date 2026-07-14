@@ -6,7 +6,7 @@ sys.path.insert(0,str(ROOT/"src"))
 from incident_intelligence.dataset import load_annotations,validate_annotations
 
 def main()->int:
-    records=load_annotations(ROOT/"data"/"annotated"/"incidents.json")
+    records=load_annotations(ROOT/"data"/"ground_truth"/"incidents.json")
     errors=validate_annotations(records)
     if errors:
         print("Dataset validation failed:")

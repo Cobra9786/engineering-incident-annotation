@@ -1,20 +1,80 @@
 [
   {
-    "incident_id": "INC-0005",
-    "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present.",
+    "incident_id": "INC-0004",
+    "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "insufficient inlet fluid supply",
+    "evidence": [
+      "pressure oscillation",
+      "rattling near inlet",
+      "reservoir below minimum"
+    ],
+    "recommended_action": "stop the pump, restore fluid level, and inspect the inlet path",
+    "confidence": 0.95,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Indicators strongly support cavitation."
+  },
+  {
+    "incident_id": "INC-0020",
+    "report": "Pressure dropped after maintenance. The seal area is dry, the bypass valve reports closed, the reservoir is full, and motor current is normal. No reliable flow measurement is available.",
     "component": "unknown",
     "failure_mode": "pressure_drop",
     "severity": "medium",
     "urgency": "within_24_hours",
     "probable_cause": "unknown",
     "evidence": [
-      "pressure is 15 psi below normal after maintenance",
-      "no leaks or abnormal sounds observed"
+      "pressure dropped after maintenance",
+      "seal area is dry",
+      "bypass valve reports closed",
+      "reservoir is full",
+      "motor current is normal",
+      "no reliable flow measurement is available"
     ],
-    "recommended_action": "verify valve positions, calibration, and maintenance changes",
-    "confidence": 0.68,
+    "recommended_action": "verify pressure calibration and obtain a reliable flow measurement before diagnosing the cause",
+    "confidence": 0.61,
     "abstain": true,
     "requires_human_review": true,
-    "review_notes": "Insufficient evidence for component or root cause."
+    "review_notes": "Several common causes are unsupported, and a key process measurement is missing."
+  },
+  {
+    "incident_id": "INC-0011",
+    "report": "Pressure decreased during a scheduled shutdown after the isolation valve was opened to depressurize the line.",
+    "component": "pipeline",
+    "failure_mode": "normal_depressurization",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "planned shutdown procedure",
+    "evidence": [
+      "pressure decreased during scheduled shutdown",
+      "isolation valve was opened to depressurize the line"
+    ],
+    "recommended_action": "record the event as expected operation and continue monitoring",
+    "confidence": 0.99,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": "The pressure reduction was intentional and procedural."
+  },
+  {
+    "incident_id": "INC-0016",
+    "report": "Pressure is low, but one gauge indicates 60 psi and another indicates 118 psi. No flow, temperature, valve-position, or inspection data is available.",
+    "component": "unknown",
+    "failure_mode": "unknown",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "unknown",
+    "evidence": [
+      "one gauge indicates 60 psi",
+      "another gauge indicates 118 psi",
+      "supporting process data is unavailable"
+    ],
+    "recommended_action": "obtain an independent pressure measurement and inspect both instruments",
+    "confidence": 0.42,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "The readings conflict and there is insufficient corroborating evidence."
   }
 ]
