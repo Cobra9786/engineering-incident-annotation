@@ -1,5 +1,6 @@
 [
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0015",
     "report": "Pressure declined rapidly in a chemical transfer line. A toxic-gas monitor alarmed near the flange, and operators reported visible vapor.",
     "component": "pipeline",
@@ -19,6 +20,7 @@
     "review_notes": "Multiple direct indicators support a critical hazardous release."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0005",
     "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present.",
     "component": "unknown",
@@ -37,6 +39,7 @@
     "review_notes": "Insufficient evidence for component or root cause."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0013",
     "report": "Discharge pressure is low and the motor is not drawing current. The motor controller reports loss of incoming power.",
     "component": "power_supply",
@@ -56,6 +59,7 @@
     "review_notes": "The pressure symptom is secondary to confirmed electrical power loss."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0017",
     "report": "Pump discharge pressure dropped and casing temperature increased to 96 degrees Celsius. Grinding noise is present at the bearing housing.",
     "component": "pump",
@@ -75,6 +79,7 @@
     "review_notes": "Combined pressure, temperature, and noise evidence indicates severe damage."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0014",
     "report": "The supervisory display shows low pressure, but the PLC tag and local transmitter both show 125 psi. A recent software deployment changed the display scaling.",
     "component": "controller",
@@ -94,6 +99,7 @@
     "review_notes": "The process pressure is normal; only the display representation is wrong."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0007",
     "report": "Discharge pressure decreased after maintenance. The bypass valve position indicator shows the valve is fully open.",
     "component": "valve",
@@ -112,6 +118,7 @@
     "review_notes": "Valve position provides direct evidence of the configuration issue."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0012",
     "report": "Both pressure transmitters reported zero for twelve seconds while flow, motor current, and the mechanical gauge remained normal. The controller logged a communications timeout.",
     "component": "communications_link",
@@ -132,6 +139,7 @@
     "review_notes": "Independent process measurements remained normal."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0001",
     "report": "Pump discharge pressure dropped from 145 psi to 82 psi within two minutes of startup. Oil is visible around the output shaft seal.",
     "component": "pump",
@@ -150,6 +158,7 @@
     "review_notes": "Direct evidence supports a seal leak."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0019",
     "report": "Pressure fell by 8 psi during a cold-weather startup. It returned to the normal range within three minutes as fluid temperature increased.",
     "component": "unknown",
@@ -169,6 +178,7 @@
     "review_notes": "The brief self-correcting event is consistent with a transient condition."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0002",
     "report": "Hydraulic line pressure slowly declined by 12 psi over four hours. No visible fluid was found during inspection.",
     "component": "unknown",
@@ -187,6 +197,7 @@
     "review_notes": "Cause and component are ambiguous."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0008",
     "report": "Pump inlet pressure is abnormally low while discharge pressure and motor current fluctuate. The inlet strainer is heavily fouled.",
     "component": "filter",
@@ -206,6 +217,7 @@
     "review_notes": "The fouled inlet strainer explains the restricted supply."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0006",
     "report": "Pressure dropped 30 psi after a flexible hydraulic line ruptured near the actuator. Fluid was visible on the floor.",
     "component": "pipeline",

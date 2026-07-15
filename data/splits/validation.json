@@ -1,5 +1,6 @@
 [
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0004",
     "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum.",
     "component": "pump",
@@ -19,6 +20,7 @@
     "review_notes": "Indicators strongly support cavitation."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0020",
     "report": "Pressure dropped after maintenance. The seal area is dry, the bypass valve reports closed, the reservoir is full, and motor current is normal. No reliable flow measurement is available.",
     "component": "unknown",
@@ -41,6 +43,7 @@
     "review_notes": "Several common causes are unsupported, and a key process measurement is missing."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0011",
     "report": "Pressure decreased during a scheduled shutdown after the isolation valve was opened to depressurize the line.",
     "component": "pipeline",
@@ -59,6 +62,7 @@
     "review_notes": "The pressure reduction was intentional and procedural."
   },
   {
+    "schema_version": "1.0.0",
     "incident_id": "INC-0016",
     "report": "Pressure is low, but one gauge indicates 60 psi and another indicates 118 psi. No flow, temperature, valve-position, or inspection data is available.",
     "component": "unknown",

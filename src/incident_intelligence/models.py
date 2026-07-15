@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any
+from xml.parsers.expat import errors
 
+CURRENT_SCHEMA_VERSION = "1.0.0"
 
 ALLOWED_COMPONENTS = {
     "pump",
@@ -55,6 +57,7 @@ ALLOWED_URGENCIES = {
 
 @dataclass(frozen=True)
 class IncidentAnnotation:
+    schema_version: str
     incident_id: str
     report: str
     component: str
@@ -119,5 +122,11 @@ class IncidentAnnotation:
 
         if self.severity == "critical" and self.urgency != "immediate":
             errors.append("critical incidents must have immediate urgency")
+
+        if self.schema_version != CURRENT_SCHEMA_VERSION:
+            errors.append(
+                "schema_version must be "
+                f"{CURRENT_SCHEMA_VERSION}, got {self.schema_version}"
+            )
 
         return errors

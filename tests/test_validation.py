@@ -10,6 +10,7 @@ from incident_intelligence.models import IncidentAnnotation
 
 def make_valid_record() -> IncidentAnnotation:
     return IncidentAnnotation(
+        schema_version="1.0.0",
         incident_id="INC-TEST",
         report="Pump discharge pressure dropped unexpectedly during operation.",
         component="pump",
@@ -27,6 +28,17 @@ def make_valid_record() -> IncidentAnnotation:
         review_notes=(
             "The pressure loss is clear, but the cause is unknown."
         ),
+    )
+
+def test_invalid_schema_version_is_rejected() -> None:
+    record = replace(
+        make_valid_record(),
+        schema_version="2.0.0",
+    )
+
+    assert (
+        "schema_version must be 1.0.0, got 2.0.0"
+        in record.validate()
     )
 
 
