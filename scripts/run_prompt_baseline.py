@@ -14,6 +14,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from incident_intelligence.classification_metrics import (
+    INVALID_PREDICTION_LABEL,
+    calculate_classification_report,
+)
 from incident_intelligence.dataset import load_annotations
 from incident_intelligence.models import IncidentAnnotation
 from incident_intelligence.parser import (
@@ -35,13 +39,21 @@ DEFAULT_OUTPUT_DIR = (
     ROOT / "evaluation_runs" / "prompt_v1"
 )
 
-EXACT_MATCH_FIELDS = (
+CLASSIFICATION_FIELDS = (
     "component",
     "failure_mode",
     "severity",
     "urgency",
+)
+
+POLICY_FIELDS = (
     "abstain",
     "requires_human_review",
+)
+
+EXACT_MATCH_FIELDS = (
+    *CLASSIFICATION_FIELDS,
+    *POLICY_FIELDS,
 )
 
 
@@ -77,7 +89,7 @@ def parse_args() -> argparse.Namespace:
         "--max-new-tokens",
         type=int,
         default=512,
-        help="Maximum number of generated tokens per incident.",
+        help="Maximum generated tokens per incident.",
     )
 
     return parser.parse_args()
@@ -88,7 +100,8 @@ def field_matches(
     predicted: IncidentAnnotation,
 ) -> dict[str, bool]:
     return {
-        field: getattr(expected, field) == getattr(predicted, field)
+        field: getattr(expected, field)
+        == getattr(predicted, field)
         for field in EXACT_MATCH_FIELDS
     }
 
@@ -146,13 +159,58 @@ def run_one_incident(
     return result
 
 
+def calculate_classification_metrics(
+    results: list[dict[str, Any]],
+) -> dict[str, object]:
+    reports: dict[str, object] = {}
+
+    for field in CLASSIFICATION_FIELDS:
+        actual: list[str] = []
+        predicted: list[str] = []
+
+        for result in results:
+            actual.append(
+                str(result["ground_truth"][field])
+            )
+
+            if not result["parse_valid"]:
+                predicted.append(
+                    INVALID_PREDICTION_LABEL
+                )
+                continue
+
+            prediction = result["prediction"]
+
+            if prediction is None:
+                predicted.append(
+                    INVALID_PREDICTION_LABEL
+                )
+                continue
+
+            predicted.append(
+                str(prediction[field])
+            )
+
+        report = calculate_classification_report(
+            actual=actual,
+            predicted=predicted,
+        )
+
+        reports[field] = report.to_dict()
+
+    return reports
+
+
 def calculate_metrics(
     results: list[dict[str, Any]],
 ) -> dict[str, Any]:
     if not results:
-        raise ValueError("cannot calculate metrics for an empty run")
+        raise ValueError(
+            "cannot calculate metrics for an empty run"
+        )
 
     total = len(results)
+
     valid_results = [
         result
         for result in results
@@ -160,6 +218,10 @@ def calculate_metrics(
     ]
 
     valid_count = len(valid_results)
+
+    classification = calculate_classification_metrics(
+        results
+    )
 
     field_accuracy = {
         field: (
@@ -210,8 +272,13 @@ def calculate_metrics(
         "held_out_count": total,
         "valid_prediction_count": valid_count,
         "invalid_prediction_count": total - valid_count,
-        "json_and_contract_validity_rate": valid_count / total,
-        "exact_record_match_rate": exact_record_matches / total,
+        "json_and_contract_validity_rate": (
+            valid_count / total
+        ),
+        "exact_record_match_rate": (
+            exact_record_matches / total
+        ),
+        "classification": classification,
         "field_accuracy_all_incidents": field_accuracy,
         "field_accuracy_valid_predictions_only": (
             conditional_field_accuracy
@@ -222,7 +289,9 @@ def calculate_metrics(
         "total_prompt_tokens": sum(prompt_tokens),
         "total_generated_tokens": sum(generated_tokens),
         "average_prompt_tokens": mean(prompt_tokens),
-        "average_generated_tokens": mean(generated_tokens),
+        "average_generated_tokens": mean(
+            generated_tokens
+        ),
     }
 
 
@@ -230,62 +299,147 @@ def format_percent(value: float) -> str:
     return f"{value * 100:.1f}%"
 
 
-def build_summary(
-    *,
-    model_id: str,
-    run_timestamp: str,
+def append_classification_summary(
+    lines: list[str],
     metrics: dict[str, Any],
-    results: list[dict[str, Any]],
-) -> str:
-    lines = [
-        "# Prompt Baseline v1",
-        "",
-        f"- Model: `{model_id}`",
-        f"- Run timestamp: `{run_timestamp}`",
-        (
-            "- Held-out incidents: "
-            f"{metrics['held_out_count']}"
-        ),
-        (
-            "- Valid predictions: "
-            f"{metrics['valid_prediction_count']}"
-        ),
-        (
-            "- Invalid predictions: "
-            f"{metrics['invalid_prediction_count']}"
-        ),
-        (
-            "- JSON and contract validity: "
-            f"{format_percent(metrics['json_and_contract_validity_rate'])}"
-        ),
-        (
-            "- Exact record match rate: "
-            f"{format_percent(metrics['exact_record_match_rate'])}"
-        ),
-        (
-            "- Average latency: "
-            f"{metrics['average_latency_seconds']:.3f} seconds"
-        ),
-        "",
-        "## Field Accuracy",
-        "",
-        "| Field | Accuracy |",
-        "|---|---:|",
-    ]
-
-    field_accuracy = metrics[
-        "field_accuracy_all_incidents"
-    ]
-
-    for field in EXACT_MATCH_FIELDS:
-        lines.append(
-            f"| `{field}` | "
-            f"{format_percent(field_accuracy[field])} |"
-        )
-
+) -> None:
     lines.extend(
         [
             "",
+            "## Classification Metrics",
+            "",
+            (
+                "Macro averages give every ground-truth "
+                "class equal importance. Invalid responses "
+                "are represented as `__invalid__`."
+            ),
+            "",
+            (
+                "| Field | Macro Precision | Macro Recall | "
+                "Macro F1 | Weighted F1 | Exact Match |"
+            ),
+            "|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+
+    classification = metrics["classification"]
+
+    for field in CLASSIFICATION_FIELDS:
+        report = classification[field]
+        macro = report["macro_average"]
+        weighted = report["weighted_average"]
+
+        lines.append(
+            f"| `{field}` "
+            f"| {format_percent(macro['precision'])} "
+            f"| {format_percent(macro['recall'])} "
+            f"| {format_percent(macro['f1'])} "
+            f"| {format_percent(weighted['f1'])} "
+            f"| {format_percent(report['exact_match_rate'])} |"
+        )
+
+
+def append_per_class_metrics(
+    lines: list[str],
+    metrics: dict[str, Any],
+) -> None:
+    lines.extend(
+        [
+            "",
+            "## Per-Class Metrics",
+            "",
+        ]
+    )
+
+    classification = metrics["classification"]
+
+    for field in CLASSIFICATION_FIELDS:
+        report = classification[field]
+
+        lines.append(f"### `{field}`")
+        lines.append("")
+        lines.append(
+            "| Class | Precision | Recall | F1 | Support |"
+        )
+        lines.append("|---|---:|---:|---:|---:|")
+
+        for label in report["evaluated_labels"]:
+            class_metrics = report["per_class"][label]
+
+            lines.append(
+                f"| `{label}` "
+                f"| {format_percent(class_metrics['precision'])} "
+                f"| {format_percent(class_metrics['recall'])} "
+                f"| {format_percent(class_metrics['f1'])} "
+                f"| {class_metrics['support']} |"
+            )
+
+        lines.append("")
+
+
+def append_confusion_matrices(
+    lines: list[str],
+    metrics: dict[str, Any],
+) -> None:
+    lines.extend(
+        [
+            "## Confusion Matrices",
+            "",
+            (
+                "Rows are ground-truth classes. "
+                "Columns are predicted classes."
+            ),
+            "",
+        ]
+    )
+
+    classification = metrics["classification"]
+
+    for field in CLASSIFICATION_FIELDS:
+        report = classification[field]
+        labels = report["labels"]
+        matrix = report["confusion_matrix"]
+
+        lines.append(f"### `{field}`")
+        lines.append("")
+
+        lines.append(
+            "| Actual \\ Predicted | "
+            + " | ".join(
+                f"`{label}`"
+                for label in labels
+            )
+            + " |"
+        )
+
+        lines.append(
+            "|---|"
+            + "---:|" * len(labels)
+        )
+
+        for label, row in zip(
+            labels,
+            matrix,
+            strict=True,
+        ):
+            lines.append(
+                f"| `{label}` | "
+                + " | ".join(
+                    str(value)
+                    for value in row
+                )
+                + " |"
+            )
+
+        lines.append("")
+
+
+def append_incident_results(
+    lines: list[str],
+    results: list[dict[str, Any]],
+) -> None:
+    lines.extend(
+        [
             "## Incident Results",
             "",
         ]
@@ -299,7 +453,7 @@ def build_summary(
 
         if not result["parse_valid"]:
             lines.append(
-                f"- Status: invalid prediction"
+                "- Status: invalid prediction"
             )
             lines.append(
                 "- Error: "
@@ -354,15 +508,74 @@ def build_summary(
         )
         lines.append("")
 
+
+def build_summary(
+    *,
+    model_id: str,
+    run_timestamp: str,
+    metrics: dict[str, Any],
+    results: list[dict[str, Any]],
+) -> str:
+    lines = [
+        "# Prompt Baseline v1",
+        "",
+        f"- Model: `{model_id}`",
+        f"- Run timestamp: `{run_timestamp}`",
+        (
+            "- Held-out incidents: "
+            f"{metrics['held_out_count']}"
+        ),
+        (
+            "- Valid predictions: "
+            f"{metrics['valid_prediction_count']}"
+        ),
+        (
+            "- Invalid predictions: "
+            f"{metrics['invalid_prediction_count']}"
+        ),
+        (
+            "- JSON and contract validity: "
+            f"{format_percent(metrics['json_and_contract_validity_rate'])}"
+        ),
+        (
+            "- Exact record match rate: "
+            f"{format_percent(metrics['exact_record_match_rate'])}"
+        ),
+        (
+            "- Average latency: "
+            f"{metrics['average_latency_seconds']:.3f} seconds"
+        ),
+    ]
+
+    append_classification_summary(
+        lines,
+        metrics,
+    )
+
+    append_per_class_metrics(
+        lines,
+        metrics,
+    )
+
+    append_confusion_matrices(
+        lines,
+        metrics,
+    )
+
+    append_incident_results(
+        lines,
+        results,
+    )
+
     lines.extend(
         [
             "## Interpretation",
             "",
             (
                 "This run is the prompt-only reference baseline. "
-                "Future RAG, LoRA, and LoRA-plus-RAG configurations "
-                "must be evaluated against the same held-out records "
-                "and the same annotation contract."
+                "Future RAG, LoRA, and LoRA-plus-RAG systems "
+                "must use the same held-out records, contract, "
+                "and evaluation metrics."
             ),
             "",
         ]
@@ -498,10 +711,22 @@ def main() -> int:
         "Validity rate: "
         f"{format_percent(metrics['json_and_contract_validity_rate'])}"
     )
+
+    for field in CLASSIFICATION_FIELDS:
+        macro_f1 = metrics[
+            "classification"
+        ][field]["macro_average"]["f1"]
+
+        print(
+            f"{field} macro F1: "
+            f"{format_percent(macro_f1)}"
+        )
+
     print(
         "Average latency: "
         f"{metrics['average_latency_seconds']:.3f} seconds"
     )
+
     print(f"Results: {args.output_dir}")
 
     return 0

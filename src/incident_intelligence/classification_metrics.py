@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
-from typing import Hashable, Sequence
+from typing import Sequence
 
 
-Label = Hashable
 INVALID_PREDICTION_LABEL = "__invalid__"
 
 
@@ -52,7 +51,10 @@ class ClassificationReport:
         }
 
 
-def safe_divide(numerator: int, denominator: int) -> float:
+def safe_divide(
+    numerator: int,
+    denominator: int,
+) -> float:
     if denominator == 0:
         return 0.0
 
@@ -136,8 +138,8 @@ def calculate_classification_report(
 
     labels = stable_labels(actual, predicted)
 
-    # Macro and weighted averages are computed over classes
-    # that genuinely occur in the ground-truth benchmark.
+    # Aggregate metrics are calculated only over classes that
+    # actually occur in the ground-truth benchmark.
     evaluated_labels = sorted(set(actual))
 
     matrix = build_confusion_matrix(

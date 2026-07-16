@@ -1,7 +1,7 @@
 {
   "run": {
     "run_name": "prompt_v1",
-    "run_timestamp": "2026-07-16T16:07:50.105106+00:00",
+    "run_timestamp": "2026-07-16T18:49:43.245406+00:00",
     "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
     "held_out_path": "data/splits/held_out_test.json",
     "max_new_tokens": 512,
@@ -36,7 +36,7 @@
       "raw_model_output": "```json\n{\n  \"component\": \"pressure_sensor\",\n  \"failure_mode\": \"wiring_loose\",\n  \"severity\": \"low\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"Loose sensor wiring\",\n  \"evidence\": [\n    \"Pressure reading fell to zero\",\n    \"Redundant mechanical gauge showed consistent readings\"\n  ],\n  \"recommended_action\": \"Reconnect and tighten the sensor wiring\",\n  \"confidence\": 0.85,\n  \"abstain\": false,\n  \"requires_human_review\": false,\n  \"review_notes\": \"Sensor wiring issue resolved with reconnection and tightening.\"\n}\n```",
       "prompt_tokens": 640,
       "generated_tokens": 137,
-      "latency_seconds": 3.1835418550035683,
+      "latency_seconds": 3.1227739330061013,
       "parse_valid": false,
       "prediction": null,
       "validation_error": "model prediction failed business validation: invalid failure_mode: wiring_loose",
@@ -75,7 +75,7 @@
       "raw_model_output": "```json\n{\n  \"component\": \"valve\",\n  \"failure_mode\": \"line_leak\",\n  \"severity\": \"low\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"Unknown (visible fluid leakage)\",\n  \"evidence\": [\n    \"Low pressure downstream of the control valve\",\n    \"Physical position feedback shows valve at 12% while command is 80%\"\n  ],\n  \"recommended_action\": \"Inspect the valve for leaks and replace if necessary.\",\n  \"confidence\": 0.75,\n  \"abstain\": false,\n  \"requires_human_review\": false,\n  \"review_notes\": \"Visible fluid leakage suggests a potential line leak.\"\n}\n```",
       "prompt_tokens": 644,
       "generated_tokens": 148,
-      "latency_seconds": 2.2878208530019037,
+      "latency_seconds": 2.287770487004309,
       "parse_valid": true,
       "prediction": {
         "schema_version": "1.0.0",
@@ -131,7 +131,7 @@
       "raw_model_output": "```json\n{\n  \"component\": \"unknown\",\n  \"failure_mode\": \"software_fault\",\n  \"severity\": \"low\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"Calibration issue with the digital pressure transmitter\",\n  \"evidence\": [\n    \"Pressure readings deviate significantly from expected values\",\n    \"Calibrated gauge shows consistent reading\"\n  ],\n  \"recommended_action\": \"Re-calibrate the digital pressure transmitter\",\n  \"confidence\": 0.9,\n  \"abstain\": false,\n  \"requires_human_review\": false,\n  \"review_notes\": \"Calibration discrepancy suggests potential software error in the transmitter.\"\n}\n```",
       "prompt_tokens": 634,
       "generated_tokens": 139,
-      "latency_seconds": 2.1328963470004965,
+      "latency_seconds": 2.1264605569886044,
       "parse_valid": true,
       "prediction": {
         "schema_version": "1.0.0",
@@ -187,7 +187,7 @@
       "raw_model_output": "```json\n{\n  \"component\": \"reservoir\",\n  \"failure_mode\": \"line_leak\",\n  \"severity\": \"low\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"Unknown (gradual pressure drop)\",\n  \"evidence\": [\n    \"System pressure fell gradually as the reservoir level approached empty.\",\n    \"Pressure recovered after the reservoir was refilled.\"\n  ],\n  \"recommended_action\": \"Check for leaks in the reservoir system.\",\n  \"confidence\": 0.85,\n  \"abstain\": false,\n  \"requires_human_review\": false,\n  \"review_notes\": \"Gradual pressure drop suggests a slow leak that may require further investigation.\"\n}\n```",
       "prompt_tokens": 633,
       "generated_tokens": 147,
-      "latency_seconds": 2.2417820450064028,
+      "latency_seconds": 2.241865603995393,
       "parse_valid": true,
       "prediction": {
         "schema_version": "1.0.0",
