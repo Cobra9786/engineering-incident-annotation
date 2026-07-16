@@ -5,7 +5,7 @@ import json
 import random
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "data" / "annotated" / "incidents.json"
+SOURCE = ROOT / "data" / "ground_truth" / "incidents.json"
 OUTPUT_DIR = ROOT / "data" / "splits"
 
 records = json.loads(SOURCE.read_text(encoding="utf-8"))
@@ -18,7 +18,7 @@ validation_end = train_end + round(len(records) * 0.2)
 splits = {
     "train.json": records[:train_end],
     "validation.json": records[train_end:validation_end],
-    "test.json": records[validation_end:],
+    "held_out_test.json": records[validation_end:],
 }
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

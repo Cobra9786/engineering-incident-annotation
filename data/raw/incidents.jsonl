@@ -3,3 +3,18 @@
 {"incident_id": "INC-0003", "report": "Pressure reading fell to zero while a redundant mechanical gauge remained stable at 120 psi. Sensor wiring was loose at the connector."}
 {"incident_id": "INC-0004", "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum."}
 {"incident_id": "INC-0005", "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present."}
+{"incident_id": "INC-0006", "report": "Pressure dropped 30 psi after a flexible hydraulic line ruptured near the actuator. Fluid was visible on the floor."}
+{"incident_id": "INC-0007", "report": "Discharge pressure decreased after maintenance. The bypass valve position indicator shows the valve is fully open."}
+{"incident_id": "INC-0008", "report": "Pump inlet pressure is abnormally low while discharge pressure and motor current fluctuate. The inlet strainer is heavily fouled."}
+{"incident_id": "INC-0009", "report": "The digital pressure transmitter reads 18 psi below a recently calibrated mechanical gauge across the full operating range."}
+{"incident_id": "INC-0010", "report": "System pressure fell gradually as the reservoir level approached empty. Pressure recovered after the reservoir was refilled."}
+{"incident_id": "INC-0011", "report": "Pressure decreased during a scheduled shutdown after the isolation valve was opened to depressurize the line."}
+{"incident_id": "INC-0012", "report": "Both pressure transmitters reported zero for twelve seconds while flow, motor current, and the mechanical gauge remained normal. The controller logged a communications timeout."}
+{"incident_id": "INC-0013", "report": "Discharge pressure is low and the motor is not drawing current. The motor controller reports loss of incoming power."}
+{"incident_id": "INC-0014", "report": "The supervisory display shows low pressure, but the PLC tag and local transmitter both show 125 psi. A recent software deployment changed the display scaling."}
+{"incident_id": "INC-0015", "report": "Pressure declined rapidly in a chemical transfer line. A toxic-gas monitor alarmed near the flange, and operators reported visible vapor."}
+{"incident_id": "INC-0016", "report": "Pressure is low, but one gauge indicates 60 psi and another indicates 118 psi. No flow, temperature, valve-position, or inspection data is available."}
+{"incident_id": "INC-0017", "report": "Pump discharge pressure dropped and casing temperature increased to 96 degrees Celsius. Grinding noise is present at the bearing housing."}
+{"incident_id": "INC-0018", "report": "Pressure downstream of the control valve is low. The commanded valve position is 80 percent, but the physical position feedback remains at 12 percent."}
+{"incident_id": "INC-0019", "report": "Pressure fell by 8 psi during a cold-weather startup. It returned to the normal range within three minutes as fluid temperature increased."}
+{"incident_id": "INC-0020", "report": "Pressure dropped after maintenance. The seal area is dry, the bypass valve reports closed, the reservoir is full, and motor current is normal. No reliable flow measurement is available."}
