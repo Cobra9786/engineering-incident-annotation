@@ -1,7 +1,7 @@
 {
   "run": {
     "run_name": "prompt_v1",
-    "run_timestamp": "2026-07-16T16:07:50.105106+00:00",
+    "run_timestamp": "2026-07-16T18:49:43.245406+00:00",
     "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
     "held_out_path": "data/splits/held_out_test.json",
     "max_new_tokens": 512,
@@ -15,6 +15,471 @@
     "invalid_prediction_count": 1,
     "json_and_contract_validity_rate": 0.75,
     "exact_record_match_rate": 0.0,
+    "classification": {
+      "component": {
+        "labels": [
+          "pressure_sensor",
+          "reservoir",
+          "unknown",
+          "valve",
+          "__invalid__"
+        ],
+        "evaluated_labels": [
+          "pressure_sensor",
+          "reservoir",
+          "valve"
+        ],
+        "per_class": {
+          "pressure_sensor": {
+            "label": "pressure_sensor",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 2,
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "reservoir": {
+            "label": "reservoir",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "unknown": {
+            "label": "unknown",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "valve": {
+            "label": "valve",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "__invalid__": {
+            "label": "__invalid__",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_average": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "weighted_average": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "exact_match_rate": 0.5,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "failure_mode": {
+        "labels": [
+          "calibration_drift",
+          "line_leak",
+          "mechanical_jam",
+          "pressure_drop",
+          "signal_loss",
+          "software_fault",
+          "__invalid__"
+        ],
+        "evaluated_labels": [
+          "calibration_drift",
+          "mechanical_jam",
+          "pressure_drop",
+          "signal_loss"
+        ],
+        "per_class": {
+          "calibration_drift": {
+            "label": "calibration_drift",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "line_leak": {
+            "label": "line_leak",
+            "true_positive": 0,
+            "false_positive": 2,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "mechanical_jam": {
+            "label": "mechanical_jam",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pressure_drop": {
+            "label": "pressure_drop",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "signal_loss": {
+            "label": "signal_loss",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "software_fault": {
+            "label": "software_fault",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "__invalid__": {
+            "label": "__invalid__",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_average": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "weighted_average": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "exact_match_rate": 0.0,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "severity": {
+        "labels": [
+          "high",
+          "low",
+          "medium",
+          "__invalid__"
+        ],
+        "evaluated_labels": [
+          "high",
+          "low",
+          "medium"
+        ],
+        "per_class": {
+          "high": {
+            "label": "high",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "low": {
+            "label": "low",
+            "true_positive": 1,
+            "false_positive": 2,
+            "false_negative": 0,
+            "support": 1,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "medium": {
+            "label": "medium",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 2,
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "__invalid__": {
+            "label": "__invalid__",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_average": {
+          "precision": 0.1111111111111111,
+          "recall": 0.3333333333333333,
+          "f1": 0.16666666666666666
+        },
+        "weighted_average": {
+          "precision": 0.08333333333333333,
+          "recall": 0.25,
+          "f1": 0.125
+        },
+        "exact_match_rate": 0.25,
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "urgency": {
+        "labels": [
+          "immediate",
+          "routine",
+          "within_24_hours",
+          "__invalid__"
+        ],
+        "evaluated_labels": [
+          "immediate",
+          "routine",
+          "within_24_hours"
+        ],
+        "per_class": {
+          "immediate": {
+            "label": "immediate",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "routine": {
+            "label": "routine",
+            "true_positive": 1,
+            "false_positive": 2,
+            "false_negative": 0,
+            "support": 1,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "within_24_hours": {
+            "label": "within_24_hours",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 2,
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "__invalid__": {
+            "label": "__invalid__",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_average": {
+          "precision": 0.1111111111111111,
+          "recall": 0.3333333333333333,
+          "f1": 0.16666666666666666
+        },
+        "weighted_average": {
+          "precision": 0.08333333333333333,
+          "recall": 0.25,
+          "f1": 0.125
+        },
+        "exact_match_rate": 0.25,
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
     "field_accuracy_all_incidents": {
       "component": 0.5,
       "failure_mode": 0.0,
@@ -31,9 +496,9 @@
       "abstain": 1.0,
       "requires_human_review": 0.6666666666666666
     },
-    "average_latency_seconds": 2.461510275003093,
-    "minimum_latency_seconds": 2.1328963470004965,
-    "maximum_latency_seconds": 3.1835418550035683,
+    "average_latency_seconds": 2.444717645248602,
+    "minimum_latency_seconds": 2.1264605569886044,
+    "maximum_latency_seconds": 3.1227739330061013,
     "total_prompt_tokens": 2551,
     "total_generated_tokens": 571,
     "average_prompt_tokens": 637.75,
