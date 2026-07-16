@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any
-from xml.parsers.expat import errors
 
 CURRENT_SCHEMA_VERSION = "1.0.0"
 
@@ -85,23 +84,42 @@ class IncidentAnnotation:
         if len(self.report.strip()) < 10:
             errors.append("report must contain at least 10 characters")
 
-        if self.component not in ALLOWED_COMPONENTS:
+        if not isinstance(self.component, str):
+            errors.append("component must be a string")
+        elif self.component not in ALLOWED_COMPONENTS:
             errors.append(f"invalid component: {self.component}")
 
-        if self.failure_mode not in ALLOWED_FAILURE_MODES:
-            errors.append(f"invalid failure_mode: {self.failure_mode}")
+        if not isinstance(self.failure_mode, str):
+            errors.append("failure_mode must be a string")
+        elif self.failure_mode not in ALLOWED_FAILURE_MODES:
+            errors.append(
+                f"invalid failure_mode: {self.failure_mode}"
+            )
 
-        if self.severity not in ALLOWED_SEVERITIES:
+        if not isinstance(self.severity, str):
+            errors.append("severity must be a string")
+        elif self.severity not in ALLOWED_SEVERITIES:
             errors.append(f"invalid severity: {self.severity}")
 
-        if self.urgency not in ALLOWED_URGENCIES:
+        if not isinstance(self.urgency, str):
+            errors.append("urgency must be a string")
+        elif self.urgency not in ALLOWED_URGENCIES:
             errors.append(f"invalid urgency: {self.urgency}")
 
         if not 0.0 <= self.confidence <= 1.0:
             errors.append("confidence must be between 0.0 and 1.0")
 
-        if not self.evidence:
+        if not isinstance(self.evidence, list):
+            errors.append("evidence must be a list")
+        elif not self.evidence:
             errors.append("evidence must contain at least one item")
+        elif any(
+            not isinstance(item, str) or not item.strip()
+            for item in self.evidence
+        ):
+            errors.append(
+                "evidence items must be non-empty strings"
+            )
 
         if any(not item.strip() for item in self.evidence):
             errors.append("evidence items must not be blank")

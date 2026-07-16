@@ -8,11 +8,16 @@ version = "0.1.0"
 description = "Applied AI incident annotation and evaluation platform"
 requires-python = ">=3.11"
 dependencies = [
-    "jsonschema>=4.23"
+    "accelerate>=1.0",
+    "jsonschema>=4.23",
+    "torch>=2.6",
+    "transformers>=4.46"
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = [
+    "pytest>=8.0"
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
