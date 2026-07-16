@@ -1,0 +1,42 @@
+{
+  "run": {
+    "run_name": "prompt_v1",
+    "run_timestamp": "2026-07-16T16:07:50.105106+00:00",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "held_out_path": "data/splits/held_out_test.json",
+    "max_new_tokens": 512,
+    "generation_mode": "greedy",
+    "temperature": null,
+    "do_sample": false
+  },
+  "metrics": {
+    "held_out_count": 4,
+    "valid_prediction_count": 3,
+    "invalid_prediction_count": 1,
+    "json_and_contract_validity_rate": 0.75,
+    "exact_record_match_rate": 0.0,
+    "field_accuracy_all_incidents": {
+      "component": 0.5,
+      "failure_mode": 0.0,
+      "severity": 0.25,
+      "urgency": 0.25,
+      "abstain": 0.75,
+      "requires_human_review": 0.5
+    },
+    "field_accuracy_valid_predictions_only": {
+      "component": 0.6666666666666666,
+      "failure_mode": 0.0,
+      "severity": 0.3333333333333333,
+      "urgency": 0.3333333333333333,
+      "abstain": 1.0,
+      "requires_human_review": 0.6666666666666666
+    },
+    "average_latency_seconds": 2.461510275003093,
+    "minimum_latency_seconds": 2.1328963470004965,
+    "maximum_latency_seconds": 3.1835418550035683,
+    "total_prompt_tokens": 2551,
+    "total_generated_tokens": 571,
+    "average_prompt_tokens": 637.75,
+    "average_generated_tokens": 142.75
+  }
+}

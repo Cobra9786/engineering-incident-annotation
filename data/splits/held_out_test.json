@@ -1,0 +1,80 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "INC-0003",
+    "report": "Pressure reading fell to zero while a redundant mechanical gauge remained stable at 120 psi. Sensor wiring was loose at the connector.",
+    "component": "pressure_sensor",
+    "failure_mode": "signal_loss",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "loose sensor connector",
+    "evidence": [
+      "electronic reading fell to zero",
+      "mechanical gauge remained at 120 psi",
+      "sensor wiring was loose"
+    ],
+    "recommended_action": "secure the connector and verify sensor output",
+    "confidence": 0.99,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": "Instrumentation fault, not actual pressure loss."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "INC-0018",
+    "report": "Pressure downstream of the control valve is low. The commanded valve position is 80 percent, but the physical position feedback remains at 12 percent.",
+    "component": "valve",
+    "failure_mode": "mechanical_jam",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "control valve failed to reach commanded position",
+    "evidence": [
+      "downstream pressure is low",
+      "commanded valve position is 80 percent",
+      "physical position feedback remains at 12 percent"
+    ],
+    "recommended_action": "isolate the valve and inspect the actuator and valve mechanism",
+    "confidence": 0.98,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Position feedback confirms the valve did not follow its command."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "INC-0009",
+    "report": "The digital pressure transmitter reads 18 psi below a recently calibrated mechanical gauge across the full operating range.",
+    "component": "pressure_sensor",
+    "failure_mode": "calibration_drift",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "pressure transmitter calibration drift",
+    "evidence": [
+      "digital transmitter reads 18 psi below mechanical gauge",
+      "difference persists across the full operating range"
+    ],
+    "recommended_action": "recalibrate the pressure transmitter and verify its output",
+    "confidence": 0.98,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": "A repeatable offset against a calibrated reference supports drift."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "INC-0010",
+    "report": "System pressure fell gradually as the reservoir level approached empty. Pressure recovered after the reservoir was refilled.",
+    "component": "reservoir",
+    "failure_mode": "pressure_drop",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "insufficient fluid in reservoir",
+    "evidence": [
+      "pressure fell as reservoir approached empty",
+      "pressure recovered after reservoir refill"
+    ],
+    "recommended_action": "inspect for fluid loss and verify the reservoir level monitoring",
+    "confidence": 0.96,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": "Recovery after refill strongly supports low fluid level."
+  }
+]

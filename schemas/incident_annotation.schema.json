@@ -1,8 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cobra9786/engineering-incident-annotation/blob/main/schemas/incident_annotation.schema.json",
+  "description": "Schema version 1.0.0 for evidence-grounded engineering incident annotations.",
   "title": "Engineering Incident Annotation",
   "type": "object",
   "required": [
+    "schema_version",
     "incident_id",
     "report",
     "component",
@@ -17,6 +20,10 @@
     "requires_human_review"
   ],
   "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
     "incident_id": {
       "type": "string",
       "minLength": 1
