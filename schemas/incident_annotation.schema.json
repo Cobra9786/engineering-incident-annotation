@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Engineering Incident Annotation",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "report",
+    "component",
+    "failure_mode",
+    "severity",
+    "urgency",
+    "probable_cause",
+    "evidence",
+    "recommended_action",
+    "confidence",
+    "abstain",
+    "requires_human_review"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report": {
+      "type": "string",
+      "minLength": 10
+    },
+    "component": {
+      "type": "string"
+    },
+    "failure_mode": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "urgency": {
+      "enum": [
+        "routine",
+        "within_24_hours",
+        "immediate"
+      ]
+    },
+    "probable_cause": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "recommended_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "abstain": {
+      "type": "boolean"
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    },
+    "review_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

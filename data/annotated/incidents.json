@@ -1,0 +1,94 @@
+[
+  {
+    "incident_id": "INC-0001",
+    "report": "Pump discharge pressure dropped from 145 psi to 82 psi within two minutes of startup. Oil is visible around the output shaft seal.",
+    "component": "pump",
+    "failure_mode": "seal_leak",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "output shaft seal failure",
+    "evidence": [
+      "discharge pressure fell from 145 psi to 82 psi",
+      "oil visible around output shaft seal"
+    ],
+    "recommended_action": "shut down and inspect the seal assembly before restart",
+    "confidence": 0.98,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Direct evidence supports a seal leak."
+  },
+  {
+    "incident_id": "INC-0002",
+    "report": "Hydraulic line pressure slowly declined by 12 psi over four hours. No visible fluid was found during inspection.",
+    "component": "unknown",
+    "failure_mode": "pressure_drop",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "unknown",
+    "evidence": [
+      "pressure declined by 12 psi over four hours",
+      "no visible fluid found"
+    ],
+    "recommended_action": "perform a controlled leak test and inspect valves, fittings, and sensor calibration",
+    "confidence": 0.72,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Cause and component are ambiguous."
+  },
+  {
+    "incident_id": "INC-0003",
+    "report": "Pressure reading fell to zero while a redundant mechanical gauge remained stable at 120 psi. Sensor wiring was loose at the connector.",
+    "component": "pressure_sensor",
+    "failure_mode": "signal_loss",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "loose sensor connector",
+    "evidence": [
+      "electronic reading fell to zero",
+      "mechanical gauge remained at 120 psi",
+      "sensor wiring was loose"
+    ],
+    "recommended_action": "secure the connector and verify sensor output",
+    "confidence": 0.99,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": "Instrumentation fault, not actual pressure loss."
+  },
+  {
+    "incident_id": "INC-0004",
+    "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "insufficient inlet fluid supply",
+    "evidence": [
+      "pressure oscillation",
+      "rattling near inlet",
+      "reservoir below minimum"
+    ],
+    "recommended_action": "stop the pump, restore fluid level, and inspect the inlet path",
+    "confidence": 0.95,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Indicators strongly support cavitation."
+  },
+  {
+    "incident_id": "INC-0005",
+    "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present.",
+    "component": "unknown",
+    "failure_mode": "pressure_drop",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "unknown",
+    "evidence": [
+      "pressure is 15 psi below normal after maintenance",
+      "no leaks or abnormal sounds observed"
+    ],
+    "recommended_action": "verify valve positions, calibration, and maintenance changes",
+    "confidence": 0.68,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Insufficient evidence for component or root cause."
+  }
+]

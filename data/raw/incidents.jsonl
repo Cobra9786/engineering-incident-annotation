@@ -1,0 +1,5 @@
+{"incident_id": "INC-0001", "report": "Pump discharge pressure dropped from 145 psi to 82 psi within two minutes of startup. Oil is visible around the output shaft seal."}
+{"incident_id": "INC-0002", "report": "Hydraulic line pressure slowly declined by 12 psi over four hours. No visible fluid was found during inspection."}
+{"incident_id": "INC-0003", "report": "Pressure reading fell to zero while a redundant mechanical gauge remained stable at 120 psi. Sensor wiring was loose at the connector."}
+{"incident_id": "INC-0004", "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum."}
+{"incident_id": "INC-0005", "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present."}

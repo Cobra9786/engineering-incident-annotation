@@ -1,0 +1,20 @@
+[
+  {
+    "incident_id": "INC-0005",
+    "report": "System pressure is 15 psi below the normal range after maintenance. No leaks or abnormal sounds are present.",
+    "component": "unknown",
+    "failure_mode": "pressure_drop",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "unknown",
+    "evidence": [
+      "pressure is 15 psi below normal after maintenance",
+      "no leaks or abnormal sounds observed"
+    ],
+    "recommended_action": "verify valve positions, calibration, and maintenance changes",
+    "confidence": 0.68,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Insufficient evidence for component or root cause."
+  }
+]
