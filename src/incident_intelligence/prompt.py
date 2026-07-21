@@ -55,6 +55,7 @@ def build_incident_prompt(
     *,
     incident_id: str,
     report: str,
+    knowledge_context: str | None = None,
 ) -> str:
     output_template = {
         "component": "pump",
@@ -77,6 +78,15 @@ def build_incident_prompt(
         ),
     }
 
+    context_section = ""
+    if knowledge_context:
+        context_section = (
+            "Retrieved diagnostic guidance:\n"
+            f"{knowledge_context.strip()}\n\n"
+            "Use this guidance only to interpret the engineering diagnosis. "
+            "The incident report remains the source of evidence.\n\n"
+        )
+
     return (
         f"{SYSTEM_PROMPT}\n\n"
         f"Incident ID: {incident_id}\n\n"
@@ -92,6 +102,7 @@ def build_incident_prompt(
         f"{json.dumps(output_template, indent=2)}\n\n"
         "The example values above are illustrative only. "
         "Replace every value using the actual incident report.\n\n"
+        f"{context_section}"
         "Incident report:\n"
         f"{report}\n\n"
         "Return the completed JSON object."
