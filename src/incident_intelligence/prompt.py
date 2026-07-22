@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import json
-
 from .models import (
     ALLOWED_COMPONENTS,
     ALLOWED_FAILURE_MODES,
@@ -34,16 +32,18 @@ Classification rules:
 - Select one primary component.
 - Select one primary failure mode.
 - Do not return multiple alternatives.
-- Use only evidence contained in the report.
-- Do not invent measurements, components, causes, or observations.
-- Use "unknown" when the evidence does not support a conclusion.
+- Treat the current incident report as the only source of case evidence.
+- Retrieved diagnostic context is reference guidance, not evidence about this case.
+- Do not copy facts, measurements, observations, or case details from examples or knowledge documents.
+- Evidence must come only from the current incident report and closely paraphrase it.
+- Never invent unsupported evidence, measurements, components, causes, or observations.
+- Set probable_cause to "unknown" unless the current incident report supports it.
 - Set abstain to true when a reliable conclusion cannot be made.
 - Set requires_human_review to true when:
   - abstain is true
   - severity is high or critical
   - probable_cause is unknown
 - Critical severity requires immediate urgency.
-- Evidence items must closely paraphrase the report.
 - Return every required field.
 - Do not return schema_version, incident_id, or report.
 - Return JSON only.
@@ -57,34 +57,14 @@ def build_incident_prompt(
     report: str,
     knowledge_context: str | None = None,
 ) -> str:
-    output_template = {
-        "component": "pump",
-        "failure_mode": "seal_leak",
-        "severity": "high",
-        "urgency": "immediate",
-        "probable_cause": "output shaft seal failure",
-        "evidence": [
-            "pressure dropped after startup",
-            "oil was visible around the output shaft seal",
-        ],
-        "recommended_action": (
-            "shut down and inspect the output shaft seal"
-        ),
-        "confidence": 0.95,
-        "abstain": False,
-        "requires_human_review": True,
-        "review_notes": (
-            "Visible oil at the shaft seal supports a physical leak."
-        ),
-    }
-
     context_section = ""
     if knowledge_context:
         context_section = (
             "Retrieved diagnostic guidance:\n"
             f"{knowledge_context.strip()}\n\n"
-            "Use this guidance only to interpret the engineering diagnosis. "
-            "The incident report remains the source of evidence.\n\n"
+            "Use this only as reference guidance for interpreting the diagnosis. "
+            "It is not evidence about this case. Do not copy facts from it into "
+            "evidence or probable_cause.\n\n"
         )
 
     return (
@@ -98,10 +78,7 @@ def build_incident_prompt(
         f"{', '.join(sorted(ALLOWED_SEVERITIES))}\n\n"
         "Allowed urgency values:\n"
         f"{', '.join(sorted(ALLOWED_URGENCIES))}\n\n"
-        "Required JSON shape example:\n"
-        f"{json.dumps(output_template, indent=2)}\n\n"
-        "The example values above are illustrative only. "
-        "Replace every value using the actual incident report.\n\n"
+        "Return all fields listed in the type requirements above.\n\n"
         f"{context_section}"
         "Incident report:\n"
         f"{report}\n\n"
