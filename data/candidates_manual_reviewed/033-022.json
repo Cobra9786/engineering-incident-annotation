@@ -1,0 +1,257 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0077",
+      "report": "Operator log: The pump pressure declined below its operating band under event reference 3296. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pump",
+      "failure_mode": "pressure_drop",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "insufficient fluid supply",
+      "evidence": [
+        "The pump pressure declined below its operating band under event reference 3296.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the supply path and verify pressure",
+      "confidence": 0.9,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-033-pump-pressure_drop",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0078",
+      "report": "Work order narrative \u2014 The pump pressure declined below its operating band under event reference 2232. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pump",
+      "failure_mode": "pressure_drop",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "insufficient fluid supply",
+      "evidence": [
+        "The pump pressure declined below its operating band under event reference 2232.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the supply path and verify pressure",
+      "confidence": 0.89,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-033-pump-pressure_drop",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0079",
+      "report": "Telemetry review found the following condition. The pump pressure declined below its operating band under event reference 3932. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pump",
+      "failure_mode": "pressure_drop",
+      "severity": "low",
+      "probable_cause": "insufficient fluid supply",
+      "evidence": [
+        "The pump pressure declined below its operating band under event reference 3932.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the supply path and verify pressure",
+      "confidence": 0.96,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-033-pump-pressure_drop",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0080",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump pressure declined below its operating band under event reference 2459. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pump",
+      "failure_mode": "pressure_drop",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "insufficient fluid supply",
+      "evidence": [
+        "The pump pressure declined below its operating band under event reference 2459.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the supply path and verify pressure",
+      "confidence": 0.77,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-033-pump-pressure_drop",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0081",
+      "report": "Operator log: The DC power supply unit became unpowered and input voltage measured zero under event reference 2931. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "power_supply",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The DC power supply unit became unpowered and input voltage measured zero under event reference 2931.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.97,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-022-power_supply-power_loss",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0082",
+      "report": "Work order narrative \u2014 The DC power supply unit became unpowered and input voltage measured zero under event reference 5455. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "power_supply",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The DC power supply unit became unpowered and input voltage measured zero under event reference 5455.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.85,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-022-power_supply-power_loss",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0083",
+      "report": "Telemetry review found the following condition. The DC power supply unit became unpowered and input voltage measured zero under event reference 8667. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "power_supply",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The DC power supply unit became unpowered and input voltage measured zero under event reference 8667.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.79,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-022-power_supply-power_loss",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0084",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The DC power supply unit became unpowered and input voltage measured zero under event reference 6971. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "power_supply",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The DC power supply unit became unpowered and input voltage measured zero under event reference 6971.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.81,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-022-power_supply-power_loss",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

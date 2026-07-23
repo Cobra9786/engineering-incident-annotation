@@ -1,0 +1,258 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0085",
+      "report": "Operator log: The drive motor temperature exceeded the normal limit and continued rising under event reference 4490. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "motor",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The drive motor temperature exceeded the normal limit and continued rising under event reference 4490.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.8,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-012-motor-overheating",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0086",
+      "report": "Work order narrative \u2014 The drive motor temperature exceeded the normal limit and continued rising under event reference 4997. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "motor",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The drive motor temperature exceeded the normal limit and continued rising under event reference 4997.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.93,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-012-motor-overheating",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0087",
+      "report": "Telemetry review found the following condition. The drive motor temperature exceeded the normal limit and continued rising under event reference 1232. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "motor",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The drive motor temperature exceeded the normal limit and continued rising under event reference 1232.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.75,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-012-motor-overheating",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0088",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The drive motor temperature exceeded the normal limit and continued rising under event reference 3504. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "motor",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The drive motor temperature exceeded the normal limit and continued rising under event reference 3504.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.86,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-012-motor-overheating",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0089",
+      "report": "Operator log: The hydraulic cylinder commanded movement stopped before the requested position under event reference 6192. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "hydraulic_cylinder",
+      "failure_mode": "mechanical_jam",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The hydraulic cylinder commanded movement stopped before the requested position under event reference 6192.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.8,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-020-hydraulic_cylinder-mechanical_jam",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0090",
+      "report": "Work order narrative \u2014 The hydraulic cylinder commanded movement stopped before the requested position under event reference 7997. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "hydraulic_cylinder",
+      "failure_mode": "mechanical_jam",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The hydraulic cylinder commanded movement stopped before the requested position under event reference 7997.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.79,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-020-hydraulic_cylinder-mechanical_jam",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0091",
+      "report": "Telemetry review found the following condition. The hydraulic cylinder commanded movement stopped before the requested position under event reference 1844. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "hydraulic_cylinder",
+      "failure_mode": "mechanical_jam",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The hydraulic cylinder commanded movement stopped before the requested position under event reference 1844.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.77,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-020-hydraulic_cylinder-mechanical_jam",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0092",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The hydraulic cylinder commanded movement stopped before the requested position under event reference 8287. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "hydraulic_cylinder",
+      "failure_mode": "mechanical_jam",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The hydraulic cylinder commanded movement stopped before the requested position under event reference 8287.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.8,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-020-hydraulic_cylinder-mechanical_jam",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

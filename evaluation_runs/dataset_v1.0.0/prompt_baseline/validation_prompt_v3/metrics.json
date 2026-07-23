@@ -1,0 +1,492 @@
+{
+  "run": {
+    "run_name": "prompt_baseline_validation",
+    "run_timestamp": "2026-07-23T19:01:43.860194+00:00",
+    "dataset_version": "1.0.0",
+    "split_name": "validation",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "input_path": "data/splits/validation.json",
+    "record_count": 20,
+    "max_new_tokens": 512,
+    "generation_mode": "greedy",
+    "temperature": null,
+    "do_sample": false,
+    "training_performed": false
+  },
+  "metrics": {
+    "record_count": 20,
+    "valid_prediction_count": 20,
+    "invalid_prediction_count": 0,
+    "json_and_contract_validity_rate": 1.0,
+    "exact_record_match_rate": 0.1,
+    "classification": {
+      "component": {
+        "labels": [
+          "controller",
+          "filter",
+          "power_supply",
+          "pump",
+          "temperature_sensor",
+          "valve"
+        ],
+        "evaluated_labels": [
+          "controller",
+          "filter",
+          "power_supply",
+          "pump",
+          "temperature_sensor"
+        ],
+        "per_class": {
+          "controller": {
+            "label": "controller",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 3,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          "filter": {
+            "label": "filter",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "power_supply": {
+            "label": "power_supply",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "pump": {
+            "label": "pump",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "temperature_sensor": {
+            "label": "temperature_sensor",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "valve": {
+            "label": "valve",
+            "true_positive": 0,
+            "false_positive": 3,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_average": {
+          "precision": 1.0,
+          "recall": 0.85,
+          "f1": 0.8800000000000001
+        },
+        "weighted_average": {
+          "precision": 1.0,
+          "recall": 0.85,
+          "f1": 0.8800000000000001
+        },
+        "exact_match_rate": 0.85,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "failure_mode": {
+        "labels": [
+          "blockage",
+          "calibration_drift",
+          "overheating",
+          "pressure_drop",
+          "seal_leak",
+          "valve_misconfiguration"
+        ],
+        "evaluated_labels": [
+          "blockage",
+          "calibration_drift",
+          "overheating",
+          "seal_leak",
+          "valve_misconfiguration"
+        ],
+        "per_class": {
+          "blockage": {
+            "label": "blockage",
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 1,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          "calibration_drift": {
+            "label": "calibration_drift",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "overheating": {
+            "label": "overheating",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "pressure_drop": {
+            "label": "pressure_drop",
+            "true_positive": 0,
+            "false_positive": 1,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "seal_leak": {
+            "label": "seal_leak",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "valve_misconfiguration": {
+            "label": "valve_misconfiguration",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "macro_average": {
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9714285714285713
+        },
+        "weighted_average": {
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9714285714285713
+        },
+        "exact_match_rate": 0.95,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      },
+      "severity": {
+        "labels": [
+          "critical",
+          "high",
+          "low",
+          "medium"
+        ],
+        "evaluated_labels": [
+          "high",
+          "low",
+          "medium"
+        ],
+        "per_class": {
+          "critical": {
+            "label": "critical",
+            "true_positive": 0,
+            "false_positive": 3,
+            "false_negative": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "high": {
+            "label": "high",
+            "true_positive": 2,
+            "false_positive": 0,
+            "false_negative": 6,
+            "support": 8,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          "low": {
+            "label": "low",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 4,
+            "support": 4,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "medium": {
+            "label": "medium",
+            "true_positive": 8,
+            "false_positive": 7,
+            "false_negative": 0,
+            "support": 8,
+            "precision": 0.5333333333333333,
+            "recall": 1.0,
+            "f1": 0.6956521739130436
+          }
+        },
+        "macro_average": {
+          "precision": 0.5111111111111111,
+          "recall": 0.4166666666666667,
+          "f1": 0.3652173913043479
+        },
+        "weighted_average": {
+          "precision": 0.6133333333333333,
+          "recall": 0.5,
+          "f1": 0.4382608695652174
+        },
+        "exact_match_rate": 0.5,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            2,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      },
+      "urgency": {
+        "labels": [
+          "immediate",
+          "routine",
+          "within_24_hours"
+        ],
+        "evaluated_labels": [
+          "immediate",
+          "routine",
+          "within_24_hours"
+        ],
+        "per_class": {
+          "immediate": {
+            "label": "immediate",
+            "true_positive": 5,
+            "false_positive": 0,
+            "false_negative": 3,
+            "support": 8,
+            "precision": 1.0,
+            "recall": 0.625,
+            "f1": 0.7692307692307693
+          },
+          "routine": {
+            "label": "routine",
+            "true_positive": 4,
+            "false_positive": 0,
+            "false_negative": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "within_24_hours": {
+            "label": "within_24_hours",
+            "true_positive": 8,
+            "false_positive": 3,
+            "false_negative": 0,
+            "support": 8,
+            "precision": 0.7272727272727273,
+            "recall": 1.0,
+            "f1": 0.8421052631578948
+          }
+        },
+        "macro_average": {
+          "precision": 0.9090909090909092,
+          "recall": 0.875,
+          "f1": 0.8704453441295547
+        },
+        "weighted_average": {
+          "precision": 0.890909090909091,
+          "recall": 0.85,
+          "f1": 0.8445344129554655
+        },
+        "exact_match_rate": 0.85,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            3
+          ],
+          [
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            8
+          ]
+        ]
+      }
+    },
+    "field_accuracy_all_incidents": {
+      "component": 0.85,
+      "failure_mode": 0.95,
+      "severity": 0.5,
+      "urgency": 0.85,
+      "abstain": 1.0,
+      "requires_human_review": 0.4
+    },
+    "field_accuracy_valid_predictions_only": {
+      "component": 0.85,
+      "failure_mode": 0.95,
+      "severity": 0.5,
+      "urgency": 0.85,
+      "abstain": 1.0,
+      "requires_human_review": 0.4
+    },
+    "average_latency_seconds": 5.1951581443601755,
+    "minimum_latency_seconds": 4.866314008017071,
+    "maximum_latency_seconds": 5.8892011000425555,
+    "total_prompt_tokens": 31947,
+    "total_generated_tokens": 3243,
+    "average_prompt_tokens": 1597.35,
+    "average_generated_tokens": 162.15
+  }
+}

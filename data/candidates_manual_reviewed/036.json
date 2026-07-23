@@ -1,0 +1,131 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0157",
+      "report": "Operator log: Under event reference 7288, one indication implicated the monitored system, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "unknown",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 7288, one indication implicated the monitored system, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-036-unknown-unknown",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0158",
+      "report": "Work order narrative \u2014 Under event reference 8831, one indication implicated the monitored system, but a second independent indication contradicted it. Follow-up inspection recorded the impact. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "unknown",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 8831, one indication implicated the monitored system, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-036-unknown-unknown",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0159",
+      "report": "Telemetry review found the following condition. Under event reference 3917, one indication implicated the monitored system, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "unknown",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 3917, one indication implicated the monitored system, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-036-unknown-unknown",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0160",
+      "report": "Shift handoff report: Pressure transmitter PT-204 indicated 42 psi while the mechanical gauge at the same location read 71 psi. A second redundant transmitter agreed with the mechanical gauge. No other alarms were active. Because the available indications conflict, the affected component and failure mode cannot be determined reliably without additional inspection.",
+      "component": "unknown",
+      "failure_mode": "unknown",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Pressure transmitter PT-204 indicated 42 psi while the mechanical gauge read 71 psi.",
+        "A second redundant transmitter agreed with the mechanical gauge.",
+        "No other alarms were active."
+      ],
+      "recommended_action": "Verify transmitter calibration, compare with redundant instrumentation, and inspect the pressure sensing line before diagnosing the fault.",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-036-unknown-unknown",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

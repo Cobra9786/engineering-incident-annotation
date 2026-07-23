@@ -56,19 +56,69 @@ def parse_args() -> argparse.Namespace:
 def apply_deterministic_policy(
     prediction: IncidentAnnotation,
 ) -> tuple[IncidentAnnotation, SeverityDecision]:
-    """Replace only the two policy-owned fields on a parsed prediction."""
+    """Apply severity policy and reconcile dependent review state."""
     decision = assign_severity_and_urgency(
         report=prediction.report,
         component=prediction.component,
         failure_mode=prediction.failure_mode,
+    )
+    requires_human_review = (
+        prediction.abstain
+        or decision.severity in {"high", "critical"}
+        or prediction.probable_cause == "unknown"
+    )
+    review_notes = _reconcile_review_notes(
+        prediction=prediction,
+        final_severity=decision.severity,
+        requires_human_review=requires_human_review,
     )
     return (
         replace(
             prediction,
             severity=decision.severity,
             urgency=decision.urgency,
+            requires_human_review=requires_human_review,
+            review_notes=review_notes,
         ),
         decision,
+    )
+
+
+def _reconcile_review_notes(
+    *,
+    prediction: IncidentAnnotation,
+    final_severity: str,
+    requires_human_review: bool,
+) -> str:
+    if not requires_human_review:
+        return ""
+
+    severity_changed = prediction.severity != final_severity
+    normalized_notes = " ".join(prediction.review_notes.casefold().split())
+    cites_old_severity = severity_changed and (
+        f"{prediction.severity} severity" in normalized_notes
+        or f"severity is {prediction.severity}" in normalized_notes
+    )
+    if not cites_old_severity:
+        return prediction.review_notes
+
+    if prediction.abstain:
+        return "Human review required because the model abstained."
+    if final_severity in {"high", "critical"}:
+        return "Human review required by final severity."
+    return "Human review required because probable cause is unknown."
+
+
+def timestamped_output_path(
+    stable_output_path: Path,
+    *,
+    run_timestamp: datetime,
+    top_k: int,
+) -> Path:
+    timestamp = run_timestamp.astimezone(UTC).strftime("%Y%m%dT%H%M%S%fZ")
+    return stable_output_path.with_name(
+        f"{stable_output_path.stem}_{timestamp}_topk{top_k}"
+        f"{stable_output_path.suffix}"
     )
 
 
@@ -141,7 +191,7 @@ def _field_accuracy(
     field: str,
 ) -> float:
     return sum(
-        record["variants"][variant]["parse_valid"]
+        _variant_is_valid(record["variants"][variant], variant)
         and record["variants"][variant]["prediction"][field]
         == record["ground_truth"][field]
         for record in records
@@ -152,7 +202,8 @@ def _summary(records: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         variant: {
             "validity_rate": sum(
-                record["variants"][variant]["parse_valid"] for record in records
+                _variant_is_valid(record["variants"][variant], variant)
+                for record in records
             ) / len(records),
             "field_accuracy": {
                 field: _field_accuracy(records, variant, field)
@@ -163,8 +214,15 @@ def _summary(records: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _variant_is_valid(result: dict[str, Any], variant: str) -> bool:
+    if variant == "diagnostics_plus_policy":
+        return bool(result.get("post_policy_valid", False))
+    return bool(result["parse_valid"])
+
+
 def main() -> int:
     args = parse_args()
+    run_timestamp = datetime.now(UTC)
     expected_records = load_annotations(args.held_out)
     if not expected_records:
         raise ValueError("held-out dataset is empty")
@@ -215,21 +273,31 @@ def main() -> int:
 
     payload = {
         "run": {
-            "timestamp": datetime.now(UTC).isoformat(),
+            "timestamp": run_timestamp.isoformat(),
             "model_id": args.model_id,
             "held_out_path": str(args.held_out),
             "knowledge_directory": str(args.knowledge_dir),
             "severity_guidance_retrieved": False,
             "primary_variant": "diagnostics_plus_policy",
+            "top_k": args.top_k,
         },
         "summary": _summary(records),
         "records": records,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    serialized_payload = json.dumps(payload, indent=2) + "\n"
+    timestamped_output = timestamped_output_path(
+        args.output,
+        run_timestamp=run_timestamp,
+        top_k=args.top_k,
+    )
+    with timestamped_output.open("x", encoding="utf-8") as artifact_file:
+        artifact_file.write(serialized_payload)
+    args.output.write_text(serialized_payload, encoding="utf-8")
 
     print(json.dumps(payload["summary"], indent=2))
-    print(f"Results: {args.output}")
+    print(f"Timestamped artifact: {timestamped_output}")
+    print(f"Latest stable alias: {args.output}")
     return 0
 
 

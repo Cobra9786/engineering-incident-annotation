@@ -5,11 +5,13 @@ from time import perf_counter
 from typing import Any
 
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+)
 
-
-DEFAULT_MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
-
+DEFAULT_MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"
 
 @dataclass(frozen=True)
 class GenerationResult:
@@ -31,17 +33,25 @@ class QwenIncidentGenerator:
             model_id,
         )
 
-        dtype = (
-            torch.float16
-            if torch.cuda.is_available()
-            else torch.float32
-        )
+        if torch.cuda.is_available():
+            quantization_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+                bnb_4bit_use_double_quant=True,
+            )
 
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_id,
-            dtype=dtype,
-            device_map="auto",
-        )
+            self.model = AutoModelForCausalLM.from_pretrained(
+                model_id,
+                quantization_config=quantization_config,
+                device_map="auto",
+            )
+        else:
+            self.model = AutoModelForCausalLM.from_pretrained(
+                model_id,
+                dtype=torch.float32,
+                device_map="cpu",
+            )
 
         self.model.eval()
 
