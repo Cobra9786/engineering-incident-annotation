@@ -1,0 +1,130 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0021",
+      "report": "Operator log: The fieldbus link display disagreed with verified local values after a software change under event reference 5647. Operation is stable, and routine maintenance is appropriate.",
+      "component": "communications_link",
+      "failure_mode": "configuration_error",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "incorrect software configuration",
+      "evidence": [
+        "The fieldbus link display disagreed with verified local values after a software change under event reference 5647.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "restore the verified configuration and retest",
+      "confidence": 0.77,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-025-communications_link-configuration_error",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0022",
+      "report": "Work order narrative \u2014 The fieldbus link display disagreed with verified local values after a software change under event reference 4923. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+      "component": "communications_link",
+      "failure_mode": "configuration_error",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "incorrect software configuration",
+      "evidence": [
+        "The fieldbus link display disagreed with verified local values after a software change under event reference 4923.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "restore the verified configuration and retest",
+      "confidence": 0.74,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-025-communications_link-configuration_error",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0023",
+      "report": "Telemetry review found the following condition. The fieldbus link display disagreed with verified local values after a software change under event reference 5552. Operation is stable, and routine maintenance is appropriate.",
+      "component": "communications_link",
+      "failure_mode": "configuration_error",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "incorrect software configuration",
+      "evidence": [
+        "The fieldbus link display disagreed with verified local values after a software change under event reference 5552.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "restore the verified configuration and retest",
+      "confidence": 0.87,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-025-communications_link-configuration_error",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0024",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The fieldbus link display disagreed with verified local values after a software change under event reference 6588. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+      "component": "communications_link",
+      "failure_mode": "configuration_error",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "incorrect software configuration",
+      "evidence": [
+        "The fieldbus link display disagreed with verified local values after a software change under event reference 6588.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "restore the verified configuration and retest",
+      "confidence": 0.85,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-025-communications_link-configuration_error",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

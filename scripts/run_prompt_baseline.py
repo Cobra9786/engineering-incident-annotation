@@ -31,12 +31,16 @@ from incident_intelligence.qwen import (
 )
 
 
-DEFAULT_HELD_OUT_PATH = (
+DEFAULT_INPUT_PATH = (
     ROOT / "data" / "splits" / "held_out_test.json"
 )
 
 DEFAULT_OUTPUT_DIR = (
-    ROOT / "evaluation_runs" / "prompt_v1"
+    ROOT
+    / "evaluation_runs"
+    / "dataset_v1.0.0"
+    / "prompt_baseline"
+    / "held_out"
 )
 
 CLASSIFICATION_FIELDS = (
@@ -61,15 +65,22 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Run the local Qwen prompt-only baseline across "
-            "the held-out engineering incident dataset."
+             "an engineering incident evaluation dataset."
         )
     )
 
     parser.add_argument(
-        "--held-out",
+        "--input",
         type=Path,
-        default=DEFAULT_HELD_OUT_PATH,
-        help="Path to the held-out ground-truth JSON file.",
+        default=DEFAULT_INPUT_PATH,
+        help="Path to the evaluation ground-truth JSON file.",
+    )
+
+    parser.add_argument(
+        "--split-name",
+        choices=("validation", "held_out"),
+        default="held_out",
+        help="Logical dataset split being evaluated.",
     )
 
     parser.add_argument(
@@ -269,7 +280,7 @@ def calculate_metrics(
     )
 
     return {
-        "held_out_count": total,
+        "record_count": total,
         "valid_prediction_count": valid_count,
         "invalid_prediction_count": total - valid_count,
         "json_and_contract_validity_rate": (
@@ -513,18 +524,32 @@ def build_summary(
     *,
     model_id: str,
     run_timestamp: str,
+    split_name: str,
     metrics: dict[str, Any],
     results: list[dict[str, Any]],
 ) -> str:
+    if split_name == "validation":
+        interpretation = (
+            "This run evaluates the prompt-only system on the "
+            "validation split. General prompt, parser, and generation "
+            "issues may be investigated using these results. The "
+            "held-out split must remain untouched until the baseline "
+            "configuration is frozen."
+        )
+    else:
+        interpretation = (
+            "This run is the official prompt-only held-out baseline. "
+            "Future RAG, LoRA, and LoRA-plus-RAG systems must use the "
+            "same held-out records, contract, and evaluation metrics."
+        )
+
     lines = [
-        "# Prompt Baseline v1",
+        "# Prompt-Only Baseline — Dataset v1.0.0",
         "",
         f"- Model: `{model_id}`",
         f"- Run timestamp: `{run_timestamp}`",
-        (
-            "- Held-out incidents: "
-            f"{metrics['held_out_count']}"
-        ),
+        f"- Dataset split: `{split_name}`",
+        f"- Incidents: {metrics['record_count']}",
         (
             "- Valid predictions: "
             f"{metrics['valid_prediction_count']}"
@@ -571,12 +596,7 @@ def build_summary(
         [
             "## Interpretation",
             "",
-            (
-                "This run is the prompt-only reference baseline. "
-                "Future RAG, LoRA, and LoRA-plus-RAG systems "
-                "must use the same held-out records, contract, "
-                "and evaluation metrics."
-            ),
+            interpretation,
             "",
         ]
     )
@@ -593,24 +613,33 @@ def write_json(
         encoding="utf-8",
     )
 
+def display_path(path: Path) -> str:
+    resolved_path = path.resolve()
+    resolved_root = ROOT.resolve()
+
+    try:
+        return str(resolved_path.relative_to(resolved_root))
+    except ValueError:
+        return str(resolved_path)
+
 
 def main() -> int:
     args = parse_args()
 
-    if not args.held_out.exists():
+    if not args.input.exists():
         print(
-            f"Held-out dataset does not exist: {args.held_out}",
+            f"Evaluation dataset does not exist: {args.input}",
             file=sys.stderr,
         )
         return 1
 
     expected_records = load_annotations(
-        args.held_out
+        args.input
     )
 
     if not expected_records:
         print(
-            "Held-out dataset is empty.",
+            "Evaluation dataset is empty.",
             file=sys.stderr,
         )
         return 1
@@ -659,16 +688,18 @@ def main() -> int:
     metrics = calculate_metrics(results)
 
     run_metadata = {
-        "run_name": "prompt_v1",
+        "run_name": f"prompt_baseline_{args.split_name}",
         "run_timestamp": run_timestamp,
+        "dataset_version": "1.0.0",
+        "split_name": args.split_name,
         "model_id": args.model_id,
-        "held_out_path": str(
-            args.held_out.relative_to(ROOT)
-        ),
+        "input_path": display_path(args.input),
+        "record_count": len(expected_records),
         "max_new_tokens": args.max_new_tokens,
         "generation_mode": "greedy",
         "temperature": None,
         "do_sample": False,
+        "training_performed": False,
     }
 
     predictions_payload = {
@@ -684,6 +715,7 @@ def main() -> int:
     summary = build_summary(
         model_id=args.model_id,
         run_timestamp=run_timestamp,
+        split_name=args.split_name,
         metrics=metrics,
         results=results,
     )

@@ -1,0 +1,386 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0133",
+      "report": "Operator log: The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 2657. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pressure_sensor",
+      "failure_mode": "signal_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "loose signal connector",
+      "evidence": [
+        "The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 2657.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect signal wiring and verify instrument output",
+      "confidence": 0.9,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-008-pressure_sensor-signal_loss",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0134",
+      "report": "Work order narrative \u2014 The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 4527. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pressure_sensor",
+      "failure_mode": "signal_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "loose signal connector",
+      "evidence": [
+        "The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 4527.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect signal wiring and verify instrument output",
+      "confidence": 0.74,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-008-pressure_sensor-signal_loss",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0135",
+      "report": "Telemetry review found the following condition. The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 8943. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pressure_sensor",
+      "failure_mode": "signal_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "loose signal connector",
+      "evidence": [
+        "The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 8943.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect signal wiring and verify instrument output",
+      "confidence": 0.79,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-008-pressure_sensor-signal_loss",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0136",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 1665. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+      "component": "pressure_sensor",
+      "failure_mode": "signal_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "loose signal connector",
+      "evidence": [
+        "The pressure transmitter electronic reading disappeared while an independent indication remained steady under event reference 1665.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect signal wiring and verify instrument output",
+      "confidence": 0.88,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-008-pressure_sensor-signal_loss",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0137",
+      "report": "Operator log: The backup battery temperature exceeded the normal limit and continued rising under event reference 9198. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "battery",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The backup battery temperature exceeded the normal limit and continued rising under event reference 9198.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.83,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-016-battery-overheating",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0138",
+      "report": "Work order narrative \u2014 The backup battery temperature exceeded the normal limit and continued rising under event reference 4261. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "battery",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The backup battery temperature exceeded the normal limit and continued rising under event reference 4261.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.97,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-016-battery-overheating",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0139",
+      "report": "Telemetry review found the following condition. The backup battery temperature exceeded the normal limit and continued rising under event reference 6712. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "battery",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The backup battery temperature exceeded the normal limit and continued rising under event reference 6712.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.83,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-016-battery-overheating",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0140",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The backup battery temperature exceeded the normal limit and continued rising under event reference 6297. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "battery",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The backup battery temperature exceeded the normal limit and continued rising under event reference 6297.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.89,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-016-battery-overheating",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0141",
+      "report": "Operator log: The pump temperature exceeded the normal limit and continued rising under event reference 8756. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "pump",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The pump temperature exceeded the normal limit and continued rising under event reference 8756.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.73,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-004-pump-overheating",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0142",
+      "report": "Work order narrative \u2014 The pump temperature exceeded the normal limit and continued rising under event reference 9685. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "pump",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The pump temperature exceeded the normal limit and continued rising under event reference 9685.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.74,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-004-pump-overheating",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0143",
+      "report": "Telemetry review found the following condition. The pump temperature exceeded the normal limit and continued rising under event reference 7262. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "pump",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The pump temperature exceeded the normal limit and continued rising under event reference 7262.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.86,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-004-pump-overheating",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0144",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump temperature exceeded the normal limit and continued rising under event reference 3025. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+      "component": "pump",
+      "failure_mode": "overheating",
+      "severity": "critical",
+      "urgency": "immediate",
+      "probable_cause": "restricted cooling airflow",
+      "evidence": [
+        "The pump temperature exceeded the normal limit and continued rising under event reference 3025.",
+        "An emergency shutdown is active because the condition presents imminent danger to personnel."
+      ],
+      "recommended_action": "remove load and inspect cooling and lubrication",
+      "confidence": 0.84,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Final severity requires human review."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-004-pump-overheating",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

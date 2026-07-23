@@ -1,80 +1,383 @@
 [
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0003",
-    "report": "Pressure reading fell to zero while a redundant mechanical gauge remained stable at 120 psi. Sensor wiring was loose at the connector.",
-    "component": "pressure_sensor",
-    "failure_mode": "signal_loss",
-    "severity": "medium",
-    "urgency": "within_24_hours",
-    "probable_cause": "loose sensor connector",
-    "evidence": [
-      "electronic reading fell to zero",
-      "mechanical gauge remained at 120 psi",
-      "sensor wiring was loose"
-    ],
-    "recommended_action": "secure the connector and verify sensor output",
-    "confidence": 0.99,
-    "abstain": false,
-    "requires_human_review": false,
-    "review_notes": "Instrumentation fault, not actual pressure loss."
-  },
-  {
-    "schema_version": "1.0.0",
-    "incident_id": "INC-0018",
-    "report": "Pressure downstream of the control valve is low. The commanded valve position is 80 percent, but the physical position feedback remains at 12 percent.",
-    "component": "valve",
-    "failure_mode": "mechanical_jam",
-    "severity": "high",
+    "incident_id": "SYN-0137",
+    "report": "Operator log: The backup battery temperature exceeded the normal limit and continued rising under event reference 9198. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "battery",
+    "failure_mode": "overheating",
+    "severity": "critical",
     "urgency": "immediate",
-    "probable_cause": "control valve failed to reach commanded position",
+    "probable_cause": "restricted cooling airflow",
     "evidence": [
-      "downstream pressure is low",
-      "commanded valve position is 80 percent",
-      "physical position feedback remains at 12 percent"
+      "The backup battery temperature exceeded the normal limit and continued rising under event reference 9198.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
     ],
-    "recommended_action": "isolate the valve and inspect the actuator and valve mechanism",
-    "confidence": 0.98,
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.83,
     "abstain": false,
     "requires_human_review": true,
-    "review_notes": "Position feedback confirms the valve did not follow its command."
+    "review_notes": "Final severity requires human review."
   },
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0009",
-    "report": "The digital pressure transmitter reads 18 psi below a recently calibrated mechanical gauge across the full operating range.",
-    "component": "pressure_sensor",
-    "failure_mode": "calibration_drift",
+    "incident_id": "SYN-0138",
+    "report": "Work order narrative \u2014 The backup battery temperature exceeded the normal limit and continued rising under event reference 4261. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "battery",
+    "failure_mode": "overheating",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "restricted cooling airflow",
+    "evidence": [
+      "The backup battery temperature exceeded the normal limit and continued rising under event reference 4261.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.97,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0139",
+    "report": "Telemetry review found the following condition. The backup battery temperature exceeded the normal limit and continued rising under event reference 6712. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "battery",
+    "failure_mode": "overheating",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "restricted cooling airflow",
+    "evidence": [
+      "The backup battery temperature exceeded the normal limit and continued rising under event reference 6712.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.83,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0140",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The backup battery temperature exceeded the normal limit and continued rising under event reference 6297. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "battery",
+    "failure_mode": "overheating",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "restricted cooling airflow",
+    "evidence": [
+      "The backup battery temperature exceeded the normal limit and continued rising under event reference 6297.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.89,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0021",
+    "report": "Operator log: The fieldbus link display disagreed with verified local values after a software change under event reference 5647. Operation is stable, and routine maintenance is appropriate.",
+    "component": "communications_link",
+    "failure_mode": "configuration_error",
     "severity": "low",
     "urgency": "routine",
-    "probable_cause": "pressure transmitter calibration drift",
+    "probable_cause": "incorrect software configuration",
     "evidence": [
-      "digital transmitter reads 18 psi below mechanical gauge",
-      "difference persists across the full operating range"
+      "The fieldbus link display disagreed with verified local values after a software change under event reference 5647.",
+      "Operation is stable, and routine maintenance is appropriate."
     ],
-    "recommended_action": "recalibrate the pressure transmitter and verify its output",
-    "confidence": 0.98,
+    "recommended_action": "restore the verified configuration and retest",
+    "confidence": 0.77,
     "abstain": false,
     "requires_human_review": false,
-    "review_notes": "A repeatable offset against a calibrated reference supports drift."
+    "review_notes": ""
   },
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0010",
-    "report": "System pressure fell gradually as the reservoir level approached empty. Pressure recovered after the reservoir was refilled.",
-    "component": "reservoir",
-    "failure_mode": "pressure_drop",
-    "severity": "medium",
-    "urgency": "within_24_hours",
-    "probable_cause": "insufficient fluid in reservoir",
+    "incident_id": "SYN-0022",
+    "report": "Work order narrative \u2014 The fieldbus link display disagreed with verified local values after a software change under event reference 4923. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+    "component": "communications_link",
+    "failure_mode": "configuration_error",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "incorrect software configuration",
     "evidence": [
-      "pressure fell as reservoir approached empty",
-      "pressure recovered after reservoir refill"
+      "The fieldbus link display disagreed with verified local values after a software change under event reference 4923.",
+      "Operation is stable, and routine maintenance is appropriate."
     ],
-    "recommended_action": "inspect for fluid loss and verify the reservoir level monitoring",
-    "confidence": 0.96,
+    "recommended_action": "restore the verified configuration and retest",
+    "confidence": 0.74,
     "abstain": false,
     "requires_human_review": false,
-    "review_notes": "Recovery after refill strongly supports low fluid level."
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0023",
+    "report": "Telemetry review found the following condition. The fieldbus link display disagreed with verified local values after a software change under event reference 5552. Operation is stable, and routine maintenance is appropriate.",
+    "component": "communications_link",
+    "failure_mode": "configuration_error",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "incorrect software configuration",
+    "evidence": [
+      "The fieldbus link display disagreed with verified local values after a software change under event reference 5552.",
+      "Operation is stable, and routine maintenance is appropriate."
+    ],
+    "recommended_action": "restore the verified configuration and retest",
+    "confidence": 0.87,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0024",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The fieldbus link display disagreed with verified local values after a software change under event reference 6588. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+    "component": "communications_link",
+    "failure_mode": "configuration_error",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "incorrect software configuration",
+    "evidence": [
+      "The fieldbus link display disagreed with verified local values after a software change under event reference 6588.",
+      "Operation is stable, and routine maintenance is appropriate."
+    ],
+    "recommended_action": "restore the verified configuration and retest",
+    "confidence": 0.85,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0089",
+    "report": "Operator log: The hydraulic cylinder commanded movement stopped before the requested position under event reference 6192. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "hydraulic_cylinder",
+    "failure_mode": "mechanical_jam",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "seized mechanical linkage",
+    "evidence": [
+      "The hydraulic cylinder commanded movement stopped before the requested position under event reference 6192.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "isolate and inspect the mechanical drive",
+    "confidence": 0.8,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0090",
+    "report": "Work order narrative \u2014 The hydraulic cylinder commanded movement stopped before the requested position under event reference 7997. Follow-up inspection recorded the impact. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "hydraulic_cylinder",
+    "failure_mode": "mechanical_jam",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "seized mechanical linkage",
+    "evidence": [
+      "The hydraulic cylinder commanded movement stopped before the requested position under event reference 7997.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "isolate and inspect the mechanical drive",
+    "confidence": 0.79,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0091",
+    "report": "Telemetry review found the following condition. The hydraulic cylinder commanded movement stopped before the requested position under event reference 1844. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "hydraulic_cylinder",
+    "failure_mode": "mechanical_jam",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "seized mechanical linkage",
+    "evidence": [
+      "The hydraulic cylinder commanded movement stopped before the requested position under event reference 1844.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "isolate and inspect the mechanical drive",
+    "confidence": 0.77,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0092",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The hydraulic cylinder commanded movement stopped before the requested position under event reference 8287. No unrelated alarms were active. An emergency shutdown is active because the condition presents imminent danger to personnel.",
+    "component": "hydraulic_cylinder",
+    "failure_mode": "mechanical_jam",
+    "severity": "critical",
+    "urgency": "immediate",
+    "probable_cause": "seized mechanical linkage",
+    "evidence": [
+      "The hydraulic cylinder commanded movement stopped before the requested position under event reference 8287.",
+      "An emergency shutdown is active because the condition presents imminent danger to personnel."
+    ],
+    "recommended_action": "isolate and inspect the mechanical drive",
+    "confidence": 0.8,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Final severity requires human review."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0073",
+    "report": "Operator log: The pump pressure oscillated while a rattling sound came from the inlet under event reference 2652. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "restricted inlet supply",
+    "evidence": [
+      "The pump pressure oscillated while a rattling sound came from the inlet under event reference 2652.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "stop the unit and restore adequate inlet supply",
+    "confidence": 0.83,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0074",
+    "report": "Work order narrative \u2014 The pump pressure oscillated while a rattling sound came from the inlet under event reference 3247. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "restricted inlet supply",
+    "evidence": [
+      "The pump pressure oscillated while a rattling sound came from the inlet under event reference 3247.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "stop the unit and restore adequate inlet supply",
+    "confidence": 0.73,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0075",
+    "report": "Telemetry review found the following condition. The pump pressure oscillated while a rattling sound came from the inlet under event reference 2429. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "restricted inlet supply",
+    "evidence": [
+      "The pump pressure oscillated while a rattling sound came from the inlet under event reference 2429.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "stop the unit and restore adequate inlet supply",
+    "confidence": 0.81,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0076",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump pressure oscillated while a rattling sound came from the inlet under event reference 5771. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "pump",
+    "failure_mode": "cavitation",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "restricted inlet supply",
+    "evidence": [
+      "The pump pressure oscillated while a rattling sound came from the inlet under event reference 5771.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "stop the unit and restore adequate inlet supply",
+    "confidence": 0.73,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0157",
+    "report": "Operator log: Under event reference 7288, one indication implicated the monitored system, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+    "component": "unknown",
+    "failure_mode": "unknown",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "unknown",
+    "evidence": [
+      "Under event reference 7288, one indication implicated the monitored system, but a second independent indication contradicted it.",
+      "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+    ],
+    "recommended_action": "collect independent measurements before diagnosing",
+    "confidence": 0.45,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Conflicting evidence requires expert adjudication."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0158",
+    "report": "Work order narrative \u2014 Under event reference 8831, one indication implicated the monitored system, but a second independent indication contradicted it. Follow-up inspection recorded the impact. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+    "component": "unknown",
+    "failure_mode": "unknown",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "unknown",
+    "evidence": [
+      "Under event reference 8831, one indication implicated the monitored system, but a second independent indication contradicted it.",
+      "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+    ],
+    "recommended_action": "collect independent measurements before diagnosing",
+    "confidence": 0.45,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Conflicting evidence requires expert adjudication."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0159",
+    "report": "Telemetry review found the following condition. Under event reference 3917, one indication implicated the monitored system, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+    "component": "unknown",
+    "failure_mode": "unknown",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "unknown",
+    "evidence": [
+      "Under event reference 3917, one indication implicated the monitored system, but a second independent indication contradicted it.",
+      "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+    ],
+    "recommended_action": "collect independent measurements before diagnosing",
+    "confidence": 0.45,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Conflicting evidence requires expert adjudication."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0160",
+    "report": "Shift handoff report: Pressure transmitter PT-204 indicated 42 psi while the mechanical gauge at the same location read 71 psi. A second redundant transmitter agreed with the mechanical gauge. No other alarms were active. Because the available indications conflict, the affected component and failure mode cannot be determined reliably without additional inspection.",
+    "component": "unknown",
+    "failure_mode": "unknown",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "unknown",
+    "evidence": [
+      "Pressure transmitter PT-204 indicated 42 psi while the mechanical gauge read 71 psi.",
+      "A second redundant transmitter agreed with the mechanical gauge.",
+      "No other alarms were active."
+    ],
+    "recommended_action": "Verify transmitter calibration, compare with redundant instrumentation, and inspect the pressure sensing line before diagnosing the fault.",
+    "confidence": 0.45,
+    "abstain": true,
+    "requires_human_review": true,
+    "review_notes": "Conflicting evidence requires expert adjudication."
   }
 ]

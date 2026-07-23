@@ -1,0 +1,386 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0145",
+      "report": "Operator log: Under event reference 3329, one indication implicated the process line, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "pipeline",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 3329, one indication implicated the process line, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-039-pipeline-unknown",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0146",
+      "report": "Work order narrative \u2014 Under event reference 7131, one indication implicated the process line, but a second independent indication contradicted it. Follow-up inspection recorded the impact. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "pipeline",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 7131, one indication implicated the process line, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-039-pipeline-unknown",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0147",
+      "report": "Telemetry review found the following condition. Under event reference 7509, one indication implicated the process line, but a second independent indication contradicted it. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "pipeline",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 7509, one indication implicated the process line, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-039-pipeline-unknown",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0148",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. Under event reference 7565, one indication implicated the process line, but a second independent indication contradicted it. No unrelated alarms were active. The available evidence conflicts, and the affected component or failure mode cannot be determined reliably.",
+      "component": "pipeline",
+      "failure_mode": "unknown",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "unknown",
+      "evidence": [
+        "Under event reference 7565, one indication implicated the process line, but a second independent indication contradicted it.",
+        "The available evidence conflicts, and the affected component or failure mode cannot be determined reliably."
+      ],
+      "recommended_action": "collect independent measurements before diagnosing",
+      "confidence": 0.45,
+      "abstain": true,
+      "requires_human_review": true,
+      "review_notes": "Conflicting evidence requires expert adjudication."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-039-pipeline-unknown",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0149",
+      "report": "Operator log: The control valve stopped before reaching the requested position under event reference 2159. Operation is stable, and routine maintenance is appropriate.",
+      "component": "valve",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The control valve stopped before reaching the requested position under event reference 2159.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.85,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-005-valve-mechanical_jam",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0150",
+      "report": "Work order narrative \u2014 The control valve stopped before reaching the requested position under event reference 9963. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+      "component": "valve",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The control valve stopped before reaching the requested position under event reference 9963.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.87,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-005-valve-mechanical_jam",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0151",
+      "report": "Telemetry review found the following condition. The control valve stopped before reaching the requested position under event reference 7957. Operation is stable, and routine maintenance is appropriate.",
+      "component": "valve",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The control valve stopped before reaching the requested position under event reference 7957.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.85,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-005-valve-mechanical_jam",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0152",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The control valve stopped before reaching the requested position under event reference 6415. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+      "component": "valve",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The control valve stopped before reaching the requested position under event reference 6415.",
+        "Operation is stable, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "isolate and inspect the mechanical drive",
+      "confidence": 0.88,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-005-valve-mechanical_jam",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0153",
+      "report": "Operator log: The process line fluid was observed escaping from a line connection under event reference 9770. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "pipeline",
+      "failure_mode": "line_leak",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "failed line connection",
+      "evidence": [
+        "The process line fluid was observed escaping from a line connection under event reference 9770.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the line and repair the connection",
+      "confidence": 0.73,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-026-pipeline-line_leak",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0154",
+      "report": "Work order narrative \u2014 The process line fluid was observed escaping from a line connection under event reference 7474. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "pipeline",
+      "failure_mode": "line_leak",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "failed line connection",
+      "evidence": [
+        "The process line fluid was observed escaping from a line connection under event reference 7474.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the line and repair the connection",
+      "confidence": 0.95,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-026-pipeline-line_leak",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0155",
+      "report": "Telemetry review found the following condition. The process line fluid was observed escaping from a line connection under event reference 7724. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "pipeline",
+      "failure_mode": "line_leak",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "failed line connection",
+      "evidence": [
+        "The process line fluid was observed escaping from a line connection under event reference 7724.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the line and repair the connection",
+      "confidence": 0.87,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-026-pipeline-line_leak",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0156",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The process line fluid was observed escaping from a line connection under event reference 9610. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "pipeline",
+      "failure_mode": "line_leak",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "failed line connection",
+      "evidence": [
+        "The process line fluid was observed escaping from a line connection under event reference 9610.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the line and repair the connection",
+      "confidence": 0.89,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-026-pipeline-line_leak",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

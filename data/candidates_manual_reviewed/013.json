@@ -1,0 +1,134 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0029",
+      "report": "Operator log: The noncritical ventilation damper actuator started moving on command but stopped before reaching the requested position under event reference 7878. The redundant ventilation path remained available, process conditions stayed within normal limits, and the affected actuator was removed from automatic service. Routine maintenance is appropriate.",
+      "component": "actuator",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The noncritical ventilation damper actuator stopped before reaching the requested position under event reference 7878.",
+        "The redundant ventilation path remained available and process conditions stayed within normal limits.",
+        "The affected actuator was removed from automatic service, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the actuator, linkage, and drive mechanism, correct the obstruction, and verify full travel before returning the actuator to automatic service",
+      "confidence": 0.89,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-013-actuator-mechanical_jam",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. The noncritical apparatus, available redundant path, stable process conditions, labels, and recommended action are supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0030",
+      "report": "Work order narrative — The noncritical ventilation damper actuator started moving on command but stopped before reaching the requested position under event reference 6083. Follow-up inspection confirmed that the redundant ventilation path remained available, process conditions stayed within normal limits, and the affected actuator was removed from automatic service. Routine maintenance is appropriate.",
+      "component": "actuator",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The noncritical ventilation damper actuator stopped before reaching the requested position under event reference 6083.",
+        "The redundant ventilation path remained available and process conditions stayed within normal limits.",
+        "The affected actuator was removed from automatic service, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the actuator, linkage, and drive mechanism, correct the obstruction, and verify full travel before returning the actuator to automatic service",
+      "confidence": 0.93,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-013-actuator-mechanical_jam",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. The noncritical apparatus, available redundant path, stable process conditions, labels, and recommended action are supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0031",
+      "report": "Telemetry review found the following condition. The noncritical ventilation damper actuator started moving on command but stopped before reaching the requested position under event reference 2124. Telemetry confirmed that the redundant ventilation path remained available, process conditions stayed within normal limits, and the affected actuator was removed from automatic service. Routine maintenance is appropriate.",
+      "component": "actuator",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The noncritical ventilation damper actuator stopped before reaching the requested position under event reference 2124.",
+        "The redundant ventilation path remained available and process conditions stayed within normal limits.",
+        "The affected actuator was removed from automatic service, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the actuator, linkage, and drive mechanism, correct the obstruction, and verify full travel before returning the actuator to automatic service",
+      "confidence": 0.96,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-013-actuator-mechanical_jam",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. The noncritical apparatus, available redundant path, stable process conditions, labels, and recommended action are supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0032",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The noncritical ventilation damper actuator started moving on command but stopped before reaching the requested position under event reference 2287. No unrelated alarms were active. The redundant ventilation path remained available, process conditions stayed within normal limits, and the affected actuator was removed from automatic service. Routine maintenance is appropriate.",
+      "component": "actuator",
+      "failure_mode": "mechanical_jam",
+      "severity": "low",
+      "urgency": "routine",
+      "probable_cause": "seized mechanical linkage",
+      "evidence": [
+        "The noncritical ventilation damper actuator stopped before reaching the requested position under event reference 2287.",
+        "The redundant ventilation path remained available and process conditions stayed within normal limits.",
+        "The affected actuator was removed from automatic service, and routine maintenance is appropriate."
+      ],
+      "recommended_action": "inspect the actuator, linkage, and drive mechanism, correct the obstruction, and verify full travel before returning the actuator to automatic service",
+      "confidence": 0.78,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-013-actuator-mechanical_jam",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. The noncritical apparatus, available redundant path, stable process conditions, labels, and recommended action are supported by the report."
+    }
+  }
+]

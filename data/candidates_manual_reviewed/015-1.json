@@ -1,0 +1,130 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0037",
+      "report": "Operator log: The backup battery unit became unpowered and input voltage measured zero under event reference 1964. Production is interrupted, and immediate corrective action is required.",
+      "component": "battery",
+      "failure_mode": "power_loss",
+      "severity": "high",
+      "urgency": "immediate",
+      "probable_cause": "unknown",
+      "evidence": [
+        "The backup battery unit became unpowered and input voltage measured zero under event reference 1964.",
+        "Production is interrupted, and immediate corrective action is required."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.76,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Probable cause requires expert confirmation."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-015-battery-power_loss",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0038",
+      "report": "Work order narrative \u2014 The backup battery unit became unpowered and input voltage measured zero under event reference 3641. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+      "component": "battery",
+      "failure_mode": "power_loss",
+      "severity": "high",
+      "urgency": "immediate",
+      "probable_cause": "unknown",
+      "evidence": [
+        "The backup battery unit became unpowered and input voltage measured zero under event reference 3641.",
+        "Production is interrupted, and immediate corrective action is required."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.77,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Probable cause requires expert confirmation."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-015-battery-power_loss",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0039",
+      "report": "Telemetry review found the following condition. The backup battery unit became unpowered and input voltage measured zero under event reference 8498. Production is interrupted, and immediate corrective action is required.",
+      "component": "battery",
+      "failure_mode": "power_loss",
+      "severity": "high",
+      "urgency": "immediate",
+      "probable_cause": "unknown",
+      "evidence": [
+        "The backup battery unit became unpowered and input voltage measured zero under event reference 8498.",
+        "Production is interrupted, and immediate corrective action is required."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.97,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Probable cause requires expert confirmation."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-015-battery-power_loss",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0040",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The backup battery unit became unpowered and input voltage measured zero under event reference 8567. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+      "component": "battery",
+      "failure_mode": "power_loss",
+      "severity": "high",
+      "urgency": "immediate",
+      "probable_cause": "unknown",
+      "evidence": [
+        "The backup battery unit became unpowered and input voltage measured zero under event reference 8567.",
+        "Production is interrupted, and immediate corrective action is required."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.8,
+      "abstain": false,
+      "requires_human_review": true,
+      "review_notes": "Probable cause requires expert confirmation."
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-015-battery-power_loss",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

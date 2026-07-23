@@ -1,84 +1,382 @@
 [
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0004",
-    "report": "Pump pressure oscillates between 70 and 110 psi and a rattling sound is present near the inlet. Reservoir level is below minimum.",
-    "component": "pump",
-    "failure_mode": "cavitation",
+    "incident_id": "SYN-0049",
+    "report": "Operator log: The process controller indicated the valve position differed from the approved operating lineup under event reference 7209. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "controller",
+    "failure_mode": "valve_misconfiguration",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "incorrect maintenance lineup",
+    "evidence": [
+      "The process controller indicated the valve position differed from the approved operating lineup under event reference 7209.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "restore the approved valve configuration",
+    "confidence": 0.9,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0050",
+    "report": "Work order narrative \u2014 The process controller indicated the valve position differed from the approved operating lineup under event reference 6626. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "controller",
+    "failure_mode": "valve_misconfiguration",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "incorrect maintenance lineup",
+    "evidence": [
+      "The process controller indicated the valve position differed from the approved operating lineup under event reference 6626.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "restore the approved valve configuration",
+    "confidence": 0.76,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0051",
+    "report": "Telemetry review found the following condition. The process controller indicated the valve position differed from the approved operating lineup under event reference 1390. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "controller",
+    "failure_mode": "valve_misconfiguration",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "incorrect maintenance lineup",
+    "evidence": [
+      "The process controller indicated the valve position differed from the approved operating lineup under event reference 1390.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "restore the approved valve configuration",
+    "confidence": 0.87,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0052",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The process controller indicated the valve position differed from the approved operating lineup under event reference 3546. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "controller",
+    "failure_mode": "valve_misconfiguration",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "incorrect maintenance lineup",
+    "evidence": [
+      "The process controller indicated the valve position differed from the approved operating lineup under event reference 3546.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "restore the approved valve configuration",
+    "confidence": 0.96,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0041",
+    "report": "Operator log: The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "temperature_sensor",
+    "failure_mode": "calibration_drift",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "instrument calibration drift",
+    "evidence": [
+      "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "recalibrate the instrument and verify its range",
+    "confidence": 0.94,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0042",
+    "report": "Work order narrative \u2014 The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "temperature_sensor",
+    "failure_mode": "calibration_drift",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "instrument calibration drift",
+    "evidence": [
+      "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "recalibrate the instrument and verify its range",
+    "confidence": 0.95,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0043",
+    "report": "Telemetry review found the following condition. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "temperature_sensor",
+    "failure_mode": "calibration_drift",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "instrument calibration drift",
+    "evidence": [
+      "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "recalibrate the instrument and verify its range",
+    "confidence": 0.92,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0044",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+    "component": "temperature_sensor",
+    "failure_mode": "calibration_drift",
+    "severity": "medium",
+    "urgency": "within_24_hours",
+    "probable_cause": "instrument calibration drift",
+    "evidence": [
+      "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826.",
+      "Operation is degraded, but the equipment remains operational and should be corrected soon."
+    ],
+    "recommended_action": "recalibrate the instrument and verify its range",
+    "confidence": 0.87,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0017",
+    "report": "Operator log: The inlet filter differential pressure rose across the restricted path under event reference 8694. Production is interrupted, and immediate corrective action is required.",
+    "component": "filter",
+    "failure_mode": "blockage",
     "severity": "high",
     "urgency": "immediate",
-    "probable_cause": "insufficient inlet fluid supply",
+    "probable_cause": "unknown",
     "evidence": [
-      "pressure oscillation",
-      "rattling near inlet",
-      "reservoir below minimum"
+      "The inlet filter differential pressure rose across the restricted path under event reference 8694.",
+      "Production is interrupted, and immediate corrective action is required."
     ],
-    "recommended_action": "stop the pump, restore fluid level, and inspect the inlet path",
+    "recommended_action": "isolate and clear the restriction",
+    "confidence": 0.85,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0018",
+    "report": "Work order narrative \u2014 The inlet filter differential pressure rose across the restricted path under event reference 9839. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+    "component": "filter",
+    "failure_mode": "blockage",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The inlet filter differential pressure rose across the restricted path under event reference 9839.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "isolate and clear the restriction",
+    "confidence": 0.96,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0019",
+    "report": "Telemetry review found the following condition. The inlet filter differential pressure rose across the restricted path under event reference 9979. Production is interrupted, and immediate corrective action is required.",
+    "component": "filter",
+    "failure_mode": "blockage",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The inlet filter differential pressure rose across the restricted path under event reference 9979.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "isolate and clear the restriction",
+    "confidence": 0.78,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0020",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The inlet filter differential pressure rose across the restricted path under event reference 5856. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+    "component": "filter",
+    "failure_mode": "blockage",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The inlet filter differential pressure rose across the restricted path under event reference 5856.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "isolate and clear the restriction",
+    "confidence": 0.92,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0109",
+    "report": "Operator log: The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145. Production is interrupted, and immediate corrective action is required.",
+    "component": "power_supply",
+    "failure_mode": "overheating",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.78,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0110",
+    "report": "Work order narrative \u2014 The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+    "component": "power_supply",
+    "failure_mode": "overheating",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.74,
+    "abstain": false,
+    "requires_human_review": true,
+    "review_notes": "Probable cause requires expert confirmation."
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0111",
+    "report": "Telemetry review found the following condition. The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010. Production is interrupted, and immediate corrective action is required.",
+    "component": "power_supply",
+    "failure_mode": "overheating",
+    "severity": "high",
+    "urgency": "immediate",
+    "probable_cause": "unknown",
+    "evidence": [
+      "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010.",
+      "Production is interrupted, and immediate corrective action is required."
+    ],
+    "recommended_action": "remove load and inspect cooling and lubrication",
     "confidence": 0.95,
     "abstain": false,
     "requires_human_review": true,
-    "review_notes": "Indicators strongly support cavitation."
+    "review_notes": "Probable cause requires expert confirmation."
   },
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0020",
-    "report": "Pressure dropped after maintenance. The seal area is dry, the bypass valve reports closed, the reservoir is full, and motor current is normal. No reliable flow measurement is available.",
-    "component": "unknown",
-    "failure_mode": "pressure_drop",
-    "severity": "medium",
-    "urgency": "within_24_hours",
+    "incident_id": "SYN-0112",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+    "component": "power_supply",
+    "failure_mode": "overheating",
+    "severity": "high",
+    "urgency": "immediate",
     "probable_cause": "unknown",
     "evidence": [
-      "pressure dropped after maintenance",
-      "seal area is dry",
-      "bypass valve reports closed",
-      "reservoir is full",
-      "motor current is normal",
-      "no reliable flow measurement is available"
+      "The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868.",
+      "Production is interrupted, and immediate corrective action is required."
     ],
-    "recommended_action": "verify pressure calibration and obtain a reliable flow measurement before diagnosing the cause",
-    "confidence": 0.61,
-    "abstain": true,
+    "recommended_action": "remove load and inspect cooling and lubrication",
+    "confidence": 0.83,
+    "abstain": false,
     "requires_human_review": true,
-    "review_notes": "Several common causes are unsupported, and a key process measurement is missing."
+    "review_notes": "Probable cause requires expert confirmation."
   },
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0011",
-    "report": "Pressure decreased during a scheduled shutdown after the isolation valve was opened to depressurize the line.",
-    "component": "pipeline",
-    "failure_mode": "normal_depressurization",
+    "incident_id": "SYN-0013",
+    "report": "Operator log: The pump fluid collected around the shaft seal under event reference 7719. Operation is stable, and routine maintenance is appropriate.",
+    "component": "pump",
+    "failure_mode": "seal_leak",
     "severity": "low",
     "urgency": "routine",
-    "probable_cause": "planned shutdown procedure",
+    "probable_cause": "degraded shaft seal",
     "evidence": [
-      "pressure decreased during scheduled shutdown",
-      "isolation valve was opened to depressurize the line"
+      "The pump fluid collected around the shaft seal under event reference 7719.",
+      "Operation is stable, and routine maintenance is appropriate."
     ],
-    "recommended_action": "record the event as expected operation and continue monitoring",
-    "confidence": 0.99,
+    "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+    "confidence": 0.94,
     "abstain": false,
     "requires_human_review": false,
-    "review_notes": "The pressure reduction was intentional and procedural."
+    "review_notes": ""
   },
   {
     "schema_version": "1.0.0",
-    "incident_id": "INC-0016",
-    "report": "Pressure is low, but one gauge indicates 60 psi and another indicates 118 psi. No flow, temperature, valve-position, or inspection data is available.",
-    "component": "unknown",
-    "failure_mode": "unknown",
-    "severity": "medium",
-    "urgency": "within_24_hours",
-    "probable_cause": "unknown",
+    "incident_id": "SYN-0014",
+    "report": "Work order narrative \u2014 The pump fluid collected around the shaft seal under event reference 3803. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+    "component": "pump",
+    "failure_mode": "seal_leak",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "degraded shaft seal",
     "evidence": [
-      "one gauge indicates 60 psi",
-      "another gauge indicates 118 psi",
-      "supporting process data is unavailable"
+      "The pump fluid collected around the shaft seal under event reference 3803.",
+      "Operation is stable, and routine maintenance is appropriate."
     ],
-    "recommended_action": "obtain an independent pressure measurement and inspect both instruments",
-    "confidence": 0.42,
-    "abstain": true,
-    "requires_human_review": true,
-    "review_notes": "The readings conflict and there is insufficient corroborating evidence."
+    "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+    "confidence": 0.73,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0015",
+    "report": "Telemetry review found the following condition. The pump fluid collected around the shaft seal under event reference 7828. Operation is stable, and routine maintenance is appropriate.",
+    "component": "pump",
+    "failure_mode": "seal_leak",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "degraded shaft seal",
+    "evidence": [
+      "The pump fluid collected around the shaft seal under event reference 7828.",
+      "Operation is stable, and routine maintenance is appropriate."
+    ],
+    "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+    "confidence": 0.97,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
+  },
+  {
+    "schema_version": "1.0.0",
+    "incident_id": "SYN-0016",
+    "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump fluid collected around the shaft seal under event reference 5111. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+    "component": "pump",
+    "failure_mode": "seal_leak",
+    "severity": "low",
+    "urgency": "routine",
+    "probable_cause": "degraded shaft seal",
+    "evidence": [
+      "The pump fluid collected around the shaft seal under event reference 5111.",
+      "Operation is stable, and routine maintenance is appropriate."
+    ],
+    "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+    "confidence": 0.76,
+    "abstain": false,
+    "requires_human_review": false,
+    "review_notes": ""
   }
 ]

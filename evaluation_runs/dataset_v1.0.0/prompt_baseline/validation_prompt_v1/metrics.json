@@ -1,79 +1,96 @@
 {
   "run": {
-    "run_name": "prompt_v1",
-    "run_timestamp": "2026-07-16T18:49:43.245406+00:00",
-    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
-    "held_out_path": "data/splits/held_out_test.json",
+    "run_name": "prompt_baseline_validation",
+    "run_timestamp": "2026-07-23T18:18:21.438527+00:00",
+    "dataset_version": "1.0.0",
+    "split_name": "validation",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "input_path": "data/splits/validation.json",
+    "record_count": 20,
     "max_new_tokens": 512,
     "generation_mode": "greedy",
     "temperature": null,
-    "do_sample": false
+    "do_sample": false,
+    "training_performed": false
   },
   "metrics": {
-    "held_out_count": 4,
-    "valid_prediction_count": 3,
-    "invalid_prediction_count": 1,
-    "json_and_contract_validity_rate": 0.75,
+    "record_count": 20,
+    "valid_prediction_count": 10,
+    "invalid_prediction_count": 10,
+    "json_and_contract_validity_rate": 0.5,
     "exact_record_match_rate": 0.0,
     "classification": {
       "component": {
         "labels": [
-          "pressure_sensor",
-          "reservoir",
-          "unknown",
-          "valve",
+          "controller",
+          "filter",
+          "power_supply",
+          "pump",
+          "temperature_sensor",
           "__invalid__"
         ],
         "evaluated_labels": [
-          "pressure_sensor",
-          "reservoir",
-          "valve"
+          "controller",
+          "filter",
+          "power_supply",
+          "pump",
+          "temperature_sensor"
         ],
         "per_class": {
-          "pressure_sensor": {
-            "label": "pressure_sensor",
+          "controller": {
+            "label": "controller",
             "true_positive": 0,
             "false_positive": 0,
-            "false_negative": 2,
-            "support": 2,
+            "false_negative": 4,
+            "support": 4,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
           },
-          "reservoir": {
-            "label": "reservoir",
-            "true_positive": 1,
+          "filter": {
+            "label": "filter",
+            "true_positive": 4,
             "false_positive": 0,
             "false_negative": 0,
-            "support": 1,
+            "support": 4,
             "precision": 1.0,
             "recall": 1.0,
             "f1": 1.0
           },
-          "unknown": {
-            "label": "unknown",
-            "true_positive": 0,
-            "false_positive": 1,
-            "false_negative": 0,
-            "support": 0,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
-          },
-          "valve": {
-            "label": "valve",
-            "true_positive": 1,
+          "power_supply": {
+            "label": "power_supply",
+            "true_positive": 4,
             "false_positive": 0,
             "false_negative": 0,
-            "support": 1,
+            "support": 4,
             "precision": 1.0,
             "recall": 1.0,
             "f1": 1.0
+          },
+          "pump": {
+            "label": "pump",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 3,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          "temperature_sensor": {
+            "label": "temperature_sensor",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 3,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
           },
           "__invalid__": {
             "label": "__invalid__",
             "true_positive": 0,
-            "false_positive": 1,
+            "false_positive": 10,
             "false_negative": 0,
             "support": 0,
             "precision": 0.0,
@@ -82,27 +99,37 @@
           }
         },
         "macro_average": {
-          "precision": 0.6666666666666666,
-          "recall": 0.6666666666666666,
-          "f1": 0.6666666666666666
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1": 0.5599999999999999
         },
         "weighted_average": {
-          "precision": 0.5,
+          "precision": 0.8,
           "recall": 0.5,
-          "f1": 0.5
+          "f1": 0.5599999999999999
         },
         "exact_match_rate": 0.5,
         "confusion_matrix": [
           [
             0,
             0,
-            1,
             0,
-            1
+            0,
+            0,
+            4
           ],
           [
             0,
-            1,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
             0,
             0,
             0
@@ -111,17 +138,20 @@
             0,
             0,
             0,
+            1,
             0,
-            0
+            3
           ],
           [
+            0,
             0,
             0,
             0,
             1,
-            0
+            3
           ],
           [
+            0,
             0,
             0,
             0,
@@ -132,77 +162,78 @@
       },
       "failure_mode": {
         "labels": [
+          "blockage",
           "calibration_drift",
-          "line_leak",
-          "mechanical_jam",
-          "pressure_drop",
-          "signal_loss",
-          "software_fault",
+          "cavitation",
+          "overheating",
+          "seal_leak",
+          "valve_misconfiguration",
           "__invalid__"
         ],
         "evaluated_labels": [
+          "blockage",
           "calibration_drift",
-          "mechanical_jam",
-          "pressure_drop",
-          "signal_loss"
+          "overheating",
+          "seal_leak",
+          "valve_misconfiguration"
         ],
         "per_class": {
+          "blockage": {
+            "label": "blockage",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 4,
+            "support": 4,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
           "calibration_drift": {
             "label": "calibration_drift",
-            "true_positive": 0,
+            "true_positive": 1,
             "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
+            "false_negative": 3,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
           },
-          "line_leak": {
-            "label": "line_leak",
+          "cavitation": {
+            "label": "cavitation",
             "true_positive": 0,
-            "false_positive": 2,
+            "false_positive": 4,
             "false_negative": 0,
             "support": 0,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
           },
-          "mechanical_jam": {
-            "label": "mechanical_jam",
-            "true_positive": 0,
+          "overheating": {
+            "label": "overheating",
+            "true_positive": 4,
             "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
-          },
-          "pressure_drop": {
-            "label": "pressure_drop",
-            "true_positive": 0,
-            "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
-          },
-          "signal_loss": {
-            "label": "signal_loss",
-            "true_positive": 0,
-            "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
-          },
-          "software_fault": {
-            "label": "software_fault",
-            "true_positive": 0,
-            "false_positive": 1,
             "false_negative": 0,
-            "support": 0,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "seal_leak": {
+            "label": "seal_leak",
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 3,
+            "support": 4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          },
+          "valve_misconfiguration": {
+            "label": "valve_misconfiguration",
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 4,
+            "support": 4,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
@@ -210,7 +241,7 @@
           "__invalid__": {
             "label": "__invalid__",
             "true_positive": 0,
-            "false_positive": 1,
+            "false_positive": 10,
             "false_negative": 0,
             "support": 0,
             "precision": 0.0,
@@ -219,30 +250,21 @@
           }
         },
         "macro_average": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0
+          "precision": 0.6,
+          "recall": 0.3,
+          "f1": 0.36
         },
         "weighted_average": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0
+          "precision": 0.6,
+          "recall": 0.3,
+          "f1": 0.36
         },
-        "exact_match_rate": 0.0,
+        "exact_match_rate": 0.3,
         "confusion_matrix": [
           [
             0,
             0,
-            0,
-            0,
-            0,
-            1,
-            0
-          ],
-          [
-            0,
-            0,
-            0,
+            4,
             0,
             0,
             0,
@@ -255,16 +277,34 @@
             0,
             0,
             0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
             0,
             1,
             0,
-            0,
-            0,
-            0,
-            0
+            3
           ],
           [
             0,
@@ -273,16 +313,7 @@
             0,
             0,
             0,
-            1
-          ],
-          [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
+            4
           ],
           [
             0,
@@ -297,6 +328,7 @@
       },
       "severity": {
         "labels": [
+          "critical",
           "high",
           "low",
           "medium",
@@ -308,32 +340,42 @@
           "medium"
         ],
         "per_class": {
-          "high": {
-            "label": "high",
+          "critical": {
+            "label": "critical",
             "true_positive": 0,
-            "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
+            "false_positive": 4,
+            "false_negative": 0,
+            "support": 0,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
           },
+          "high": {
+            "label": "high",
+            "true_positive": 4,
+            "false_positive": 2,
+            "false_negative": 4,
+            "support": 8,
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "f1": 0.5714285714285715
+          },
           "low": {
             "label": "low",
-            "true_positive": 1,
-            "false_positive": 2,
-            "false_negative": 0,
-            "support": 1,
-            "precision": 0.3333333333333333,
-            "recall": 1.0,
-            "f1": 0.5
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 4,
+            "support": 4,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
           },
           "medium": {
             "label": "medium",
             "true_positive": 0,
             "false_positive": 0,
-            "false_negative": 2,
-            "support": 2,
+            "false_negative": 8,
+            "support": 8,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
@@ -341,7 +383,7 @@
           "__invalid__": {
             "label": "__invalid__",
             "true_positive": 0,
-            "false_positive": 1,
+            "false_positive": 10,
             "false_negative": 0,
             "support": 0,
             "precision": 0.0,
@@ -350,20 +392,28 @@
           }
         },
         "macro_average": {
-          "precision": 0.1111111111111111,
-          "recall": 0.3333333333333333,
-          "f1": 0.16666666666666666
+          "precision": 0.2222222222222222,
+          "recall": 0.16666666666666666,
+          "f1": 0.1904761904761905
         },
         "weighted_average": {
-          "precision": 0.08333333333333333,
-          "recall": 0.25,
-          "f1": 0.125
+          "precision": 0.26666666666666666,
+          "recall": 0.2,
+          "f1": 0.2285714285714286
         },
-        "exact_match_rate": 0.25,
+        "exact_match_rate": 0.2,
         "confusion_matrix": [
           [
             0,
-            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            4,
+            0,
             0,
             0
           ],
@@ -371,15 +421,18 @@
             0,
             1,
             0,
-            0
+            0,
+            3
           ],
           [
             0,
             1,
             0,
-            1
+            0,
+            7
           ],
           [
+            0,
             0,
             0,
             0,
@@ -402,30 +455,30 @@
         "per_class": {
           "immediate": {
             "label": "immediate",
-            "true_positive": 0,
-            "false_positive": 0,
-            "false_negative": 1,
-            "support": 1,
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0
+            "true_positive": 8,
+            "false_positive": 2,
+            "false_negative": 0,
+            "support": 8,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.888888888888889
           },
           "routine": {
             "label": "routine",
-            "true_positive": 1,
-            "false_positive": 2,
-            "false_negative": 0,
-            "support": 1,
-            "precision": 0.3333333333333333,
-            "recall": 1.0,
-            "f1": 0.5
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 4,
+            "support": 4,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
           },
           "within_24_hours": {
             "label": "within_24_hours",
             "true_positive": 0,
             "false_positive": 0,
-            "false_negative": 2,
-            "support": 2,
+            "false_negative": 8,
+            "support": 8,
             "precision": 0.0,
             "recall": 0.0,
             "f1": 0.0
@@ -433,7 +486,7 @@
           "__invalid__": {
             "label": "__invalid__",
             "true_positive": 0,
-            "false_positive": 1,
+            "false_positive": 10,
             "false_negative": 0,
             "support": 0,
             "precision": 0.0,
@@ -442,34 +495,34 @@
           }
         },
         "macro_average": {
-          "precision": 0.1111111111111111,
+          "precision": 0.26666666666666666,
           "recall": 0.3333333333333333,
-          "f1": 0.16666666666666666
+          "f1": 0.29629629629629634
         },
         "weighted_average": {
-          "precision": 0.08333333333333333,
-          "recall": 0.25,
-          "f1": 0.125
+          "precision": 0.32,
+          "recall": 0.4,
+          "f1": 0.35555555555555557
         },
-        "exact_match_rate": 0.25,
+        "exact_match_rate": 0.4,
         "confusion_matrix": [
           [
+            8,
             0,
-            1,
-            0,
-            0
-          ],
-          [
-            0,
-            1,
             0,
             0
           ],
           [
-            0,
             1,
             0,
-            1
+            0,
+            3
+          ],
+          [
+            1,
+            0,
+            0,
+            7
           ],
           [
             0,
@@ -482,26 +535,26 @@
     },
     "field_accuracy_all_incidents": {
       "component": 0.5,
-      "failure_mode": 0.0,
-      "severity": 0.25,
-      "urgency": 0.25,
-      "abstain": 0.75,
-      "requires_human_review": 0.5
+      "failure_mode": 0.3,
+      "severity": 0.2,
+      "urgency": 0.4,
+      "abstain": 0.5,
+      "requires_human_review": 0.4
     },
     "field_accuracy_valid_predictions_only": {
-      "component": 0.6666666666666666,
-      "failure_mode": 0.0,
-      "severity": 0.3333333333333333,
-      "urgency": 0.3333333333333333,
+      "component": 1.0,
+      "failure_mode": 0.6,
+      "severity": 0.4,
+      "urgency": 0.8,
       "abstain": 1.0,
-      "requires_human_review": 0.6666666666666666
+      "requires_human_review": 0.8
     },
-    "average_latency_seconds": 2.444717645248602,
-    "minimum_latency_seconds": 2.1264605569886044,
-    "maximum_latency_seconds": 3.1227739330061013,
-    "total_prompt_tokens": 2551,
-    "total_generated_tokens": 571,
-    "average_prompt_tokens": 637.75,
-    "average_generated_tokens": 142.75
+    "average_latency_seconds": 4.704757604401675,
+    "minimum_latency_seconds": 4.179044537013397,
+    "maximum_latency_seconds": 5.968777780013625,
+    "total_prompt_tokens": 11267,
+    "total_generated_tokens": 3119,
+    "average_prompt_tokens": 563.35,
+    "average_generated_tokens": 155.95
   }
 }

@@ -1,0 +1,1143 @@
+{
+  "run": {
+    "run_name": "prompt_baseline_validation",
+    "run_timestamp": "2026-07-23T19:01:43.860194+00:00",
+    "dataset_version": "1.0.0",
+    "split_name": "validation",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "input_path": "data/splits/validation.json",
+    "record_count": 20,
+    "max_new_tokens": 512,
+    "generation_mode": "greedy",
+    "temperature": null,
+    "do_sample": false,
+    "training_performed": false
+  },
+  "results": [
+    {
+      "incident_id": "SYN-0049",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0049",
+        "report": "Operator log: The process controller indicated the valve position differed from the approved operating lineup under event reference 7209. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "controller",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "incorrect maintenance lineup",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 7209.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "restore the approved valve configuration",
+        "confidence": 0.9,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"valve\",\n  \"failure_mode\": \"valve_misconfiguration\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The process controller indicated the valve position differed from the approved operating lineup under event reference 7209.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Correct the valve position to match the approved operating lineup as soon as possible.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause.\"\n}",
+      "prompt_tokens": 1594,
+      "generated_tokens": 164,
+      "latency_seconds": 5.8892011000425555,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0049",
+        "report": "Operator log: The process controller indicated the valve position differed from the approved operating lineup under event reference 7209. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "valve",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 7209.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Correct the valve position to match the approved operating lineup as soon as possible.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": false,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0050",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0050",
+        "report": "Work order narrative \u2014 The process controller indicated the valve position differed from the approved operating lineup under event reference 6626. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "controller",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "incorrect maintenance lineup",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 6626.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "restore the approved valve configuration",
+        "confidence": 0.76,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"valve\",\n  \"failure_mode\": \"valve_misconfiguration\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The process controller indicated the valve position differed from the approved operating lineup under event reference 6626.\",\n    \"Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Correct the valve position to match the approved operating lineup as soon as possible.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause.\"\n}",
+      "prompt_tokens": 1602,
+      "generated_tokens": 170,
+      "latency_seconds": 5.022784250963014,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0050",
+        "report": "Work order narrative \u2014 The process controller indicated the valve position differed from the approved operating lineup under event reference 6626. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "valve",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 6626.",
+          "Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Correct the valve position to match the approved operating lineup as soon as possible.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": false,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0051",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0051",
+        "report": "Telemetry review found the following condition. The process controller indicated the valve position differed from the approved operating lineup under event reference 1390. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "controller",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "incorrect maintenance lineup",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 1390.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "restore the approved valve configuration",
+        "confidence": 0.87,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"valve\",\n  \"failure_mode\": \"valve_misconfiguration\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The process controller indicated the valve position differed from the approved operating lineup under event reference 1390.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Correct the valve position to match the approved operating lineup as soon as possible.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause.\"\n}",
+      "prompt_tokens": 1599,
+      "generated_tokens": 163,
+      "latency_seconds": 4.91362033499172,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0051",
+        "report": "Telemetry review found the following condition. The process controller indicated the valve position differed from the approved operating lineup under event reference 1390. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "valve",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 1390.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Correct the valve position to match the approved operating lineup as soon as possible.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": false,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0052",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0052",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The process controller indicated the valve position differed from the approved operating lineup under event reference 3546. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "controller",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "incorrect maintenance lineup",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 3546.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "restore the approved valve configuration",
+        "confidence": 0.96,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"controller\",\n  \"failure_mode\": \"valve_misconfiguration\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The process controller indicated the valve position differed from the approved operating lineup under event reference 3546.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Correct the valve position under event reference 3546 soon to prevent further degradation of performance or damage.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause.\"\n}",
+      "prompt_tokens": 1612,
+      "generated_tokens": 169,
+      "latency_seconds": 5.114417337987106,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0052",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The process controller indicated the valve position differed from the approved operating lineup under event reference 3546. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "controller",
+        "failure_mode": "valve_misconfiguration",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The process controller indicated the valve position differed from the approved operating lineup under event reference 3546.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Correct the valve position under event reference 3546 soon to prevent further degradation of performance or damage.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0041",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0041",
+        "report": "Operator log: The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "instrument calibration drift",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "recalibrate the instrument and verify its range",
+        "confidence": 0.94,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"temperature_sensor\",\n  \"failure_mode\": \"calibration_drift\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\"\n}",
+      "prompt_tokens": 1594,
+      "generated_tokens": 166,
+      "latency_seconds": 5.0967775839963,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0041",
+        "report": "Operator log: The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Inspect the affected equipment to determine the underlying cause and correct the offset.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause and correct the offset."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0042",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0042",
+        "report": "Work order narrative \u2014 The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "instrument calibration drift",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "recalibrate the instrument and verify its range",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"temperature_sensor\",\n  \"failure_mode\": \"calibration_drift\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081.\",\n    \"Follow-up inspection recorded the impact.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Correct the calibration drift by recalibrating the temperature sensor.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause of the calibration drift.\"\n}",
+      "prompt_tokens": 1602,
+      "generated_tokens": 173,
+      "latency_seconds": 5.321227135020308,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0042",
+        "report": "Work order narrative \u2014 The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081.",
+          "Follow-up inspection recorded the impact.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Correct the calibration drift by recalibrating the temperature sensor.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause of the calibration drift."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0043",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0043",
+        "report": "Telemetry review found the following condition. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "instrument calibration drift",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "recalibrate the instrument and verify its range",
+        "confidence": 0.92,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"temperature_sensor\",\n  \"failure_mode\": \"calibration_drift\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\"\n}",
+      "prompt_tokens": 1599,
+      "generated_tokens": 166,
+      "latency_seconds": 5.188084735011216,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0043",
+        "report": "Telemetry review found the following condition. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Inspect the affected equipment to determine the underlying cause and correct the offset.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause and correct the offset."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0044",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0044",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "instrument calibration drift",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "recalibrate the instrument and verify its range",
+        "confidence": 0.87,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"temperature_sensor\",\n  \"failure_mode\": \"calibration_drift\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826.\",\n    \"No unrelated alarms were active.\",\n    \"Operation is degraded, but the equipment remains operational and should be corrected soon.\"\n  ],\n  \"recommended_action\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause and correct the offset.\"\n}",
+      "prompt_tokens": 1612,
+      "generated_tokens": 174,
+      "latency_seconds": 5.4552141870372,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0044",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+        "component": "temperature_sensor",
+        "failure_mode": "calibration_drift",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826.",
+          "No unrelated alarms were active.",
+          "Operation is degraded, but the equipment remains operational and should be corrected soon."
+        ],
+        "recommended_action": "Inspect the affected equipment to determine the underlying cause and correct the offset.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause and correct the offset."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0017",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0017",
+        "report": "Operator log: The inlet filter differential pressure rose across the restricted path under event reference 8694. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 8694.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "isolate and clear the restriction",
+        "confidence": 0.85,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"filter\",\n  \"failure_mode\": \"blockage\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The inlet filter differential pressure rose across the restricted path under event reference 8694.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Replace the affected filter and conduct a thorough inspection of the filter system.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Further investigation is needed to determine the exact cause of the increased differential pressure and ensure proper replacement and maintenance of the filter system.\"\n}",
+      "prompt_tokens": 1587,
+      "generated_tokens": 167,
+      "latency_seconds": 5.1652524880482815,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0017",
+        "report": "Operator log: The inlet filter differential pressure rose across the restricted path under event reference 8694. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 8694.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Replace the affected filter and conduct a thorough inspection of the filter system.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Further investigation is needed to determine the exact cause of the increased differential pressure and ensure proper replacement and maintenance of the filter system."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": false,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0018",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0018",
+        "report": "Work order narrative \u2014 The inlet filter differential pressure rose across the restricted path under event reference 9839. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 9839.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "isolate and clear the restriction",
+        "confidence": 0.96,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"filter\",\n  \"failure_mode\": \"blockage\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The inlet filter differential pressure rose across the restricted path under event reference 9839.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Replace the affected filter and conduct a thorough inspection of the filter system.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Further investigation is needed to determine the exact cause of the blockage and ensure the filter system is functioning correctly.\"\n}",
+      "prompt_tokens": 1595,
+      "generated_tokens": 164,
+      "latency_seconds": 5.441344386024866,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0018",
+        "report": "Work order narrative \u2014 The inlet filter differential pressure rose across the restricted path under event reference 9839. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 9839.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Replace the affected filter and conduct a thorough inspection of the filter system.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Further investigation is needed to determine the exact cause of the blockage and ensure the filter system is functioning correctly."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": false,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0019",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0019",
+        "report": "Telemetry review found the following condition. The inlet filter differential pressure rose across the restricted path under event reference 9979. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 9979.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "isolate and clear the restriction",
+        "confidence": 0.78,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"filter\",\n  \"failure_mode\": \"blockage\",\n  \"severity\": \"high\",\n  \"urgency\": \"immediate\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"Telemetry review found the inlet filter differential pressure rose across the restricted path under event reference 9979.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Perform immediate maintenance on the affected filter to reduce the differential pressure and restore production.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected filter to determine the underlying cause of the increased differential pressure and implement corrective actions accordingly.\"\n}",
+      "prompt_tokens": 1592,
+      "generated_tokens": 164,
+      "latency_seconds": 5.449973710987251,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0019",
+        "report": "Telemetry review found the following condition. The inlet filter differential pressure rose across the restricted path under event reference 9979. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "Telemetry review found the inlet filter differential pressure rose across the restricted path under event reference 9979.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Perform immediate maintenance on the affected filter to reduce the differential pressure and restore production.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected filter to determine the underlying cause of the increased differential pressure and implement corrective actions accordingly."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0020",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0020",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The inlet filter differential pressure rose across the restricted path under event reference 5856. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "blockage",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 5856.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "isolate and clear the restriction",
+        "confidence": 0.92,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"filter\",\n  \"failure_mode\": \"pressure_drop\",\n  \"severity\": \"medium\",\n  \"urgency\": \"within_24_hours\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The inlet filter differential pressure rose across the restricted path under event reference 5856.\",\n    \"No unrelated alarms were active.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Perform a visual inspection of the affected filter to identify any signs of blockage or other issues.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected filter to determine the underlying cause of the pressure drop.\"\n}",
+      "prompt_tokens": 1605,
+      "generated_tokens": 169,
+      "latency_seconds": 5.2971784850233234,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0020",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The inlet filter differential pressure rose across the restricted path under event reference 5856. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+        "component": "filter",
+        "failure_mode": "pressure_drop",
+        "severity": "medium",
+        "urgency": "within_24_hours",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The inlet filter differential pressure rose across the restricted path under event reference 5856.",
+          "No unrelated alarms were active.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Perform a visual inspection of the affected filter to identify any signs of blockage or other issues.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected filter to determine the underlying cause of the pressure drop."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": false,
+        "severity": false,
+        "urgency": false,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0109",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0109",
+        "report": "Operator log: The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "remove load and inspect cooling and lubrication",
+        "confidence": 0.78,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"power_supply\",\n  \"failure_mode\": \"overheating\",\n  \"severity\": \"critical\",\n  \"urgency\": \"immediate\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Immediate action is required to address the overheating issue.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected power supply to determine the underlying cause of the overheating.\"\n}",
+      "prompt_tokens": 1589,
+      "generated_tokens": 154,
+      "latency_seconds": 4.933223653992172,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0109",
+        "report": "Operator log: The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "critical",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 9145.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Immediate action is required to address the overheating issue.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected power supply to determine the underlying cause of the overheating."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0110",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0110",
+        "report": "Work order narrative \u2014 The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "remove load and inspect cooling and lubrication",
+        "confidence": 0.74,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"power_supply\",\n  \"failure_mode\": \"overheating\",\n  \"severity\": \"high\",\n  \"urgency\": \"immediate\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Immediate action is required to address the overheating issue.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected power supply to determine the underlying cause of the overheating.\"\n}",
+      "prompt_tokens": 1597,
+      "generated_tokens": 154,
+      "latency_seconds": 4.965456700010691,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0110",
+        "report": "Work order narrative \u2014 The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234. Follow-up inspection recorded the impact. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2234.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Immediate action is required to address the overheating issue.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected power supply to determine the underlying cause of the overheating."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": true,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0111",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0111",
+        "report": "Telemetry review found the following condition. The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "remove load and inspect cooling and lubrication",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"power_supply\",\n  \"failure_mode\": \"overheating\",\n  \"severity\": \"critical\",\n  \"urgency\": \"immediate\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Immediate action is required to address the overheating issue.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected power supply to determine the underlying cause of the overheating.\"\n}",
+      "prompt_tokens": 1594,
+      "generated_tokens": 154,
+      "latency_seconds": 4.962439891009126,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0111",
+        "report": "Telemetry review found the following condition. The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "critical",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 2010.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Immediate action is required to address the overheating issue.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected power supply to determine the underlying cause of the overheating."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0112",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0112",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "high",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "remove load and inspect cooling and lubrication",
+        "confidence": 0.83,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Probable cause requires expert confirmation."
+      },
+      "raw_model_output": "{\n  \"component\": \"power_supply\",\n  \"failure_mode\": \"overheating\",\n  \"severity\": \"critical\",\n  \"urgency\": \"immediate\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868.\",\n    \"Production is interrupted, and immediate corrective action is required.\"\n  ],\n  \"recommended_action\": \"Immediate action is required to address the overheating issue.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected power supply to determine the underlying cause of the overheating.\"\n}",
+      "prompt_tokens": 1607,
+      "generated_tokens": 154,
+      "latency_seconds": 5.224470991000999,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0112",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868. No unrelated alarms were active. Production is interrupted, and immediate corrective action is required.",
+        "component": "power_supply",
+        "failure_mode": "overheating",
+        "severity": "critical",
+        "urgency": "immediate",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The DC power supply temperature exceeded the normal limit and continued rising under event reference 3868.",
+          "Production is interrupted, and immediate corrective action is required."
+        ],
+        "recommended_action": "Immediate action is required to address the overheating issue.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected power supply to determine the underlying cause of the overheating."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": true
+      }
+    },
+    {
+      "incident_id": "SYN-0013",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0013",
+        "report": "Operator log: The pump fluid collected around the shaft seal under event reference 7719. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "low",
+        "urgency": "routine",
+        "probable_cause": "degraded shaft seal",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 7719.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+        "confidence": 0.94,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"pump\",\n  \"failure_mode\": \"seal_leak\",\n  \"severity\": \"medium\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The pump fluid collected around the shaft seal under event reference 7719.\",\n    \"Operation is stable, and routine maintenance is appropriate.\"\n  ],\n  \"recommended_action\": \"Perform routine maintenance on the pump to address the seal leak.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause of the seal leak.\"\n}",
+      "prompt_tokens": 1584,
+      "generated_tokens": 149,
+      "latency_seconds": 4.866314008017071,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0013",
+        "report": "Operator log: The pump fluid collected around the shaft seal under event reference 7719. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "medium",
+        "urgency": "routine",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 7719.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Perform routine maintenance on the pump to address the seal leak.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause of the seal leak."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0014",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0014",
+        "report": "Work order narrative \u2014 The pump fluid collected around the shaft seal under event reference 3803. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "low",
+        "urgency": "routine",
+        "probable_cause": "degraded shaft seal",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 3803.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+        "confidence": 0.73,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"pump\",\n  \"failure_mode\": \"seal_leak\",\n  \"severity\": \"medium\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The pump fluid collected around the shaft seal under event reference 3803.\",\n    \"Follow-up inspection recorded the impact.\",\n    \"Operation is stable, and routine maintenance is appropriate.\"\n  ],\n  \"recommended_action\": \"Perform routine maintenance on the pump to address the seal leak.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause.\"\n}",
+      "prompt_tokens": 1592,
+      "generated_tokens": 154,
+      "latency_seconds": 4.991643141023815,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0014",
+        "report": "Work order narrative \u2014 The pump fluid collected around the shaft seal under event reference 3803. Follow-up inspection recorded the impact. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "medium",
+        "urgency": "routine",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 3803.",
+          "Follow-up inspection recorded the impact.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Perform routine maintenance on the pump to address the seal leak.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0015",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0015",
+        "report": "Telemetry review found the following condition. The pump fluid collected around the shaft seal under event reference 7828. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "low",
+        "urgency": "routine",
+        "probable_cause": "degraded shaft seal",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 7828.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+        "confidence": 0.97,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"pump\",\n  \"failure_mode\": \"seal_leak\",\n  \"severity\": \"medium\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"Telemetry review found the following condition. The pump fluid collected around the shaft seal under event reference 7828.\",\n    \"Operation is stable, and routine maintenance is appropriate.\"\n  ],\n  \"recommended_action\": \"Perform routine maintenance on the pump to address the seal leak.\",\n  \"confidence\": 1.0,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause of the seal leak.\"\n}",
+      "prompt_tokens": 1589,
+      "generated_tokens": 157,
+      "latency_seconds": 5.080086425994523,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0015",
+        "report": "Telemetry review found the following condition. The pump fluid collected around the shaft seal under event reference 7828. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "medium",
+        "urgency": "routine",
+        "probable_cause": "unknown",
+        "evidence": [
+          "Telemetry review found the following condition. The pump fluid collected around the shaft seal under event reference 7828.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Perform routine maintenance on the pump to address the seal leak.",
+        "confidence": 1.0,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause of the seal leak."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    },
+    {
+      "incident_id": "SYN-0016",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "ground_truth": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0016",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump fluid collected around the shaft seal under event reference 5111. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "low",
+        "urgency": "routine",
+        "probable_cause": "degraded shaft seal",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 5111.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Inspect the shaft seal and schedule replacement during routine maintenance.",
+        "confidence": 0.76,
+        "abstain": false,
+        "requires_human_review": false,
+        "review_notes": ""
+      },
+      "raw_model_output": "{\n  \"component\": \"pump\",\n  \"failure_mode\": \"seal_leak\",\n  \"severity\": \"medium\",\n  \"urgency\": \"routine\",\n  \"probable_cause\": \"unknown\",\n  \"evidence\": [\n    \"The pump fluid collected around the shaft seal under event reference 5111.\",\n    \"No unrelated alarms were active.\",\n    \"Operation is stable, and routine maintenance is appropriate.\"\n  ],\n  \"recommended_action\": \"Perform routine maintenance on the pump to address the seal leak.\",\n  \"confidence\": 0.95,\n  \"abstain\": false,\n  \"requires_human_review\": true,\n  \"review_notes\": \"Inspect the affected equipment to determine the underlying cause of the seal leak.\"\n}",
+      "prompt_tokens": 1602,
+      "generated_tokens": 158,
+      "latency_seconds": 5.52445234102197,
+      "parse_valid": true,
+      "prediction": {
+        "schema_version": "1.0.0",
+        "incident_id": "SYN-0016",
+        "report": "Shift handoff report: technicians compared local indications with the control-room display. The pump fluid collected around the shaft seal under event reference 5111. No unrelated alarms were active. Operation is stable, and routine maintenance is appropriate.",
+        "component": "pump",
+        "failure_mode": "seal_leak",
+        "severity": "medium",
+        "urgency": "routine",
+        "probable_cause": "unknown",
+        "evidence": [
+          "The pump fluid collected around the shaft seal under event reference 5111.",
+          "No unrelated alarms were active.",
+          "Operation is stable, and routine maintenance is appropriate."
+        ],
+        "recommended_action": "Perform routine maintenance on the pump to address the seal leak.",
+        "confidence": 0.95,
+        "abstain": false,
+        "requires_human_review": true,
+        "review_notes": "Inspect the affected equipment to determine the underlying cause of the seal leak."
+      },
+      "validation_error": null,
+      "field_matches": {
+        "component": true,
+        "failure_mode": true,
+        "severity": false,
+        "urgency": true,
+        "abstain": true,
+        "requires_human_review": false
+      }
+    }
+  ]
+}

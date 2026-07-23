@@ -1,0 +1,258 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0113",
+      "report": "Operator log: The drive motor the unit became unpowered and input voltage measured zero under event reference 2607. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "motor",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The drive motor the unit became unpowered and input voltage measured zero under event reference 2607.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.86,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-014-motor-power_loss",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0114",
+      "report": "Work order narrative \u2014 The drive motor the unit became unpowered and input voltage measured zero under event reference 3439. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "motor",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The drive motor the unit became unpowered and input voltage measured zero under event reference 3439.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.89,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-014-motor-power_loss",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0115",
+      "report": "Telemetry review found the following condition. The drive motor the unit became unpowered and input voltage measured zero under event reference 3987. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "motor",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The drive motor the unit became unpowered and input voltage measured zero under event reference 3987.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.81,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-014-motor-power_loss",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0116",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The drive motor the unit became unpowered and input voltage measured zero under event reference 4400. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "motor",
+      "failure_mode": "power_loss",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "open upstream electrical circuit",
+      "evidence": [
+        "The drive motor the unit became unpowered and input voltage measured zero under event reference 4400.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate the circuit and restore power after inspection",
+      "confidence": 0.83,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-014-motor-power_loss",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0117",
+      "report": "Operator log: The control valve differential pressure rose across the restricted path under event reference 9491. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "valve",
+      "failure_mode": "blockage",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "accumulated debris",
+      "evidence": [
+        "The control valve differential pressure rose across the restricted path under event reference 9491.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate and clear the restriction",
+      "confidence": 0.92,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-034-valve-blockage",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0118",
+      "report": "Work order narrative \u2014 The control valve differential pressure rose across the restricted path under event reference 9195. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "valve",
+      "failure_mode": "blockage",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "accumulated debris",
+      "evidence": [
+        "The control valve differential pressure rose across the restricted path under event reference 9195.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate and clear the restriction",
+      "confidence": 0.84,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-034-valve-blockage",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0119",
+      "report": "Telemetry review found the following condition. The control valve differential pressure rose across the restricted path under event reference 6146. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "valve",
+      "failure_mode": "blockage",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "accumulated debris",
+      "evidence": [
+        "The control valve differential pressure rose across the restricted path under event reference 6146.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate and clear the restriction",
+      "confidence": 0.79,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-034-valve-blockage",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0120",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The control valve differential pressure rose across the restricted path under event reference 6908. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "valve",
+      "failure_mode": "blockage",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "accumulated debris",
+      "evidence": [
+        "The control valve differential pressure rose across the restricted path under event reference 6908.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "isolate and clear the restriction",
+      "confidence": 0.79,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-034-valve-blockage",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]

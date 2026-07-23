@@ -1,0 +1,130 @@
+[
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0041",
+      "report": "Operator log: The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "temperature_sensor",
+      "failure_mode": "calibration_drift",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "instrument calibration drift",
+      "evidence": [
+        "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 9051.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "recalibrate the instrument and verify its range",
+      "confidence": 0.94,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-011-temperature_sensor-calibration_drift",
+      "variation_id": 1
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0042",
+      "report": "Work order narrative \u2014 The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081. Follow-up inspection recorded the impact. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "temperature_sensor",
+      "failure_mode": "calibration_drift",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "instrument calibration drift",
+      "evidence": [
+        "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 2081.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "recalibrate the instrument and verify its range",
+      "confidence": 0.95,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-011-temperature_sensor-calibration_drift",
+      "variation_id": 2
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0043",
+      "report": "Telemetry review found the following condition. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "temperature_sensor",
+      "failure_mode": "calibration_drift",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "instrument calibration drift",
+      "evidence": [
+        "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 8862.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "recalibrate the instrument and verify its range",
+      "confidence": 0.92,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-011-temperature_sensor-calibration_drift",
+      "variation_id": 3
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  },
+  {
+    "annotation": {
+      "schema_version": "1.0.0",
+      "incident_id": "SYN-0044",
+      "report": "Shift handoff report: technicians compared local indications with the control-room display. The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826. No unrelated alarms were active. Operation is degraded, but the equipment remains operational and should be corrected soon.",
+      "component": "temperature_sensor",
+      "failure_mode": "calibration_drift",
+      "severity": "medium",
+      "urgency": "within_24_hours",
+      "probable_cause": "instrument calibration drift",
+      "evidence": [
+        "The temperature probe reading held a repeatable offset from a calibrated reference under event reference 3826.",
+        "Operation is degraded, but the equipment remains operational and should be corrected soon."
+      ],
+      "recommended_action": "recalibrate the instrument and verify its range",
+      "confidence": 0.87,
+      "abstain": false,
+      "requires_human_review": false,
+      "review_notes": ""
+    },
+    "generation_metadata": {
+      "generator": "deterministic_template_v1",
+      "seed": 20260722,
+      "scenario_family": "family-011-temperature_sensor-calibration_drift",
+      "variation_id": 4
+    },
+    "review": {
+      "status": "approved",
+      "reviewer": "Wesley Parr",
+      "notes": "Reviewed. Evidence, labels, and recommended action are fully supported by the report."
+    }
+  }
+]
